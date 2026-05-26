@@ -1,7 +1,7 @@
 import Image from "next/image";
-import logo from "../../Gym Vibe Cafe Logo.jpeg";
 import { ActionLink } from "@/components/ActionLink";
 import { businessInfo } from "@/data/businessInfo";
+import { siteAssets } from "@/data/siteAssets";
 
 export function HeroSection() {
   return (
@@ -39,8 +39,8 @@ export function HeroSection() {
         </div>
         <div className="hidden justify-self-center rounded-xl border border-[#a42425]/50 bg-black/30 p-5 shadow-2xl shadow-black/30 lg:block">
           <Image
-            src={logo}
-            alt="Gym Vibe Café logo"
+            src={siteAssets.logo.src}
+            alt={siteAssets.logo.alt}
             width={300}
             height={300}
             className="h-auto w-full rounded-md"

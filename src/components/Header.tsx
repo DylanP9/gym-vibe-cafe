@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logo from "../../Gym Vibe Cafe Logo.jpeg";
 import { businessInfo } from "@/data/businessInfo";
+import { siteAssets } from "@/data/siteAssets";
 import { ActionLink } from "@/components/ActionLink";
 
 export function Header() {
@@ -9,7 +9,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <a href="#top" className="flex min-w-0 items-center gap-3" aria-label={`${businessInfo.name} home`}>
           <Image
-            src={logo}
+            src={siteAssets.logo.src}
             alt=""
             width={52}
             height={52}
