@@ -4,15 +4,16 @@ export function StickyMobileActionBar() {
   return (
     <nav
       aria-label="Quick actions"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-white/15 bg-[#090b0a] p-2 md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-white/15 bg-[#090b0a]/98 p-2 shadow-[0_-16px_30px_rgba(0,0,0,0.25)] md:hidden"
     >
-      <a href={businessInfo.phone.href} className="mobile-action">
+      <a href={businessInfo.phone.href} aria-label={`Call ${businessInfo.name} on ${businessInfo.phone.display}`} className="mobile-action">
         Call
       </a>
       <a
         href={businessInfo.maps.directionsUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Get directions to ${businessInfo.name}`}
         className="mobile-action border-x border-white/10"
       >
         Directions
@@ -21,6 +22,7 @@ export function StickyMobileActionBar() {
         href={businessInfo.instagram.url}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Follow ${businessInfo.name} on Instagram`}
         className="mobile-action"
       >
         Instagram

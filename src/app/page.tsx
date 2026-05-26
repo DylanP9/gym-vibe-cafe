@@ -1,38 +1,32 @@
-import { AboutSection } from "@/components/AboutSection";
-import { ContactSection } from "@/components/ContactSection";
+import { FAQSection } from "@/components/FAQSection";
+import { FindUsPanel } from "@/components/FindUsPanel";
 import { Footer } from "@/components/Footer";
 import { FullMenuSection } from "@/components/FullMenuSection";
+import { GalleryPlaceholderSection } from "@/components/GalleryPlaceholderSection";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { HighProteinSection } from "@/components/HighProteinSection";
-import { InstagramSection } from "@/components/InstagramSection";
-import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
-import { LocationSection } from "@/components/LocationSection";
-import { OpeningHoursSection } from "@/components/OpeningHoursSection";
+import { InstagramCTA } from "@/components/InstagramCTA";
+import { MealPrepSection } from "@/components/MealPrepSection";
+import { MenuBoardReferencePanel } from "@/components/MenuBoardReferencePanel";
 import { PopularPicksSection } from "@/components/PopularPicksSection";
 import { QuickInfoStrip } from "@/components/QuickInfoStrip";
-import { SmoothiesSection } from "@/components/SmoothiesSection";
 import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
-import { TrustSection } from "@/components/TrustSection";
 
 export default function Home() {
   return (
     <>
-      <LocalBusinessSchema />
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <QuickInfoStrip />
         <PopularPicksSection />
-        <AboutSection />
+        <MenuBoardReferencePanel />
         <FullMenuSection />
-        <HighProteinSection />
-        <SmoothiesSection />
-        <TrustSection />
-        <OpeningHoursSection />
-        <LocationSection />
-        <InstagramSection />
-        <ContactSection />
+        <MealPrepSection />
+        <FindUsPanel />
+        <GalleryPlaceholderSection />
+        <FAQSection />
+        <InstagramCTA />
       </main>
       <Footer />
       <StickyMobileActionBar />

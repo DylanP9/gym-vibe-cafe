@@ -2,7 +2,11 @@ import { ActionLink } from "@/components/ActionLink";
 import { SectionHeading } from "@/components/SectionHeading";
 import { popularPicks } from "@/data/menu";
 
-export function PopularPicksSection() {
+interface PopularPicksSectionProps {
+  showMenuLink?: boolean;
+}
+
+export function PopularPicksSection({ showMenuLink = true }: PopularPicksSectionProps) {
   return (
     <section className="section-shell" aria-labelledby="popular-heading">
       <div className="content-shell">
@@ -23,9 +27,11 @@ export function PopularPicksSection() {
             </article>
           ))}
         </div>
-        <div className="mt-8">
-          <ActionLink href="#menu">View full menu</ActionLink>
-        </div>
+        {showMenuLink ? (
+          <div className="mt-9">
+            <ActionLink href="/menu">View full menu</ActionLink>
+          </div>
+        ) : null}
       </div>
     </section>
   );

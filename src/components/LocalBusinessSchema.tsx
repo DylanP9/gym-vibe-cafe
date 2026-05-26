@@ -1,4 +1,5 @@
 import { businessInfo } from "@/data/businessInfo";
+import { siteConfig } from "@/data/siteConfig";
 
 export function LocalBusinessSchema() {
   const schema = {
@@ -8,6 +9,8 @@ export function LocalBusinessSchema() {
     description: businessInfo.description,
     telephone: businessInfo.phone.international,
     priceRange: businessInfo.priceRange,
+    url: siteConfig.url,
+    hasMap: businessInfo.maps.directionsUrl,
     address: {
       "@type": "PostalAddress",
       streetAddress: businessInfo.address.street,

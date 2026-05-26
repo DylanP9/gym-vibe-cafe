@@ -36,11 +36,10 @@ export const businessInfo: BusinessInfo = {
     { day: "Sunday", display: "9:00 am – 3:00 pm", opens: "09:00", closes: "15:00" },
   ],
   breakfastLunchNote: "Breakfast & lunch available until 3pm.",
-  holidayHoursNote: "Hours may vary on holidays.",
   ratingSnapshot: {
     rating: 4.9,
     reviewCount: 121,
     source: "Google rating snapshot",
   },
-  priceRange: "\u00a31-10",
+  priceRange: "\u00a31\u201310",
 };

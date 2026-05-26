@@ -15,20 +15,23 @@ export function QuickInfoStrip() {
           </dd>
         </div>
         <div className="bg-[#111312] p-5">
-          <dt className="info-label">Mon - Fri</dt>
-          <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">{weekdayHours}</dd>
-        </div>
-        <div className="bg-[#111312] p-5">
-          <dt className="info-label">Weekend</dt>
+          <dt className="info-label">Opening hours</dt>
           <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">
+            Mon - Fri: {weekdayHours}
+            <br />
             Sat: {saturdayHours} · Sun: {sundayHours}
           </dd>
         </div>
         <div className="bg-[#111312] p-5">
-          <dt className="info-label">{businessInfo.ratingSnapshot.source}</dt>
+          <dt className="info-label">Breakfast & lunch</dt>
+          <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">{businessInfo.breakfastLunchNote}</dd>
+        </div>
+        <div className="bg-[#111312] p-5">
+          <dt className="info-label">Call the café</dt>
           <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">
-            {businessInfo.ratingSnapshot.rating} stars from{" "}
-            {businessInfo.ratingSnapshot.reviewCount} reviews
+            <a href={businessInfo.phone.href} className="font-bold hover:text-[#ee7777]">
+              {businessInfo.phone.display}
+            </a>
           </dd>
         </div>
       </dl>

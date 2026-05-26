@@ -1,10 +1,37 @@
 import type { Metadata, Viewport } from "next";
+import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
+import { SkipLink } from "@/components/SkipLink";
+import { siteAssets } from "@/data/siteAssets";
+import { siteConfig } from "@/data/siteConfig";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Gym Vibe Café Glasgow | High-Protein Meals, Breakfast & Smoothies",
-  description:
-    "Gym Vibe Café in Kinning Park, Glasgow serves classic Scottish breakfasts, high-protein meals, smoothies, coffee, brunch and meal prep pickups.",
+  metadataBase: siteConfig.url ? new URL(siteConfig.url) : undefined,
+  title: {
+    default: siteConfig.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  alternates: siteConfig.url ? { canonical: "/" } : undefined,
+  icons: {
+    icon: [{ url: siteAssets.logo.src, type: "image/jpeg" }],
+  },
+  openGraph: {
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    locale: "en_GB",
+    type: "website",
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+  },
+  verification: siteConfig.googleSiteVerification
+    ? { google: siteConfig.googleSiteVerification }
+    : undefined,
 };
 
 export const viewport: Viewport = {
@@ -18,7 +45,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>
+        <SkipLink />
+        <LocalBusinessSchema />
+        {children}
+      </body>
     </html>
   );
 }

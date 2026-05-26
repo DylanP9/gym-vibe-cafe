@@ -3,6 +3,9 @@
 :root {
   --background: #090b0a;
   --foreground: #f8f4ec;
+  --panel: #111312;
+  --muted: #cfc8bb;
+  --accent: #a42425;
 }
 
 * {
@@ -16,9 +19,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--background);
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(164, 36, 37, 0.07), transparent 34rem),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Avenir Next", "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -28,9 +35,17 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  border-radius: 0.25rem;
   outline: 3px solid #f3ba67;
   outline-offset: 3px;
+}
+
+::selection {
+  background: #a42425;
+  color: #fff;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 @layer components {
@@ -39,7 +54,11 @@ button:focus-visible {
   }
 
   .section-shell {
-    @apply py-14 sm:py-20;
+    @apply py-16 sm:py-24;
+  }
+
+  .section-divider {
+    @apply border-y border-white/[0.07];
   }
 
   .info-label {
@@ -47,14 +66,18 @@ button:focus-visible {
   }
 
   .menu-tile {
-    @apply rounded-lg border border-white/10 bg-[#101211] p-5 transition-colors hover:border-[#a42425]/70;
+    @apply rounded-xl border border-white/10 bg-[#101211] p-5 transition-all hover:-translate-y-0.5 hover:border-[#a42425]/70;
+  }
+
+  .menu-card {
+    @apply rounded-xl border border-white/10 bg-[#101211] shadow-[0_16px_35px_-30px_rgba(0,0,0,0.7)];
   }
 
   .stat-card {
-    @apply rounded-lg border border-white/10 bg-[#0c0e0d] p-6;
+    @apply rounded-xl border border-white/10 bg-[#0c0e0d] p-6;
   }
 
   .mobile-action {
-    @apply flex min-h-14 items-center justify-center text-xs font-bold uppercase tracking-[0.13em] text-[#f8f4ec] transition-colors hover:bg-white/10;
+    @apply flex min-h-14 items-center justify-center rounded-sm text-xs font-bold uppercase tracking-[0.13em] text-[#f8f4ec] transition-colors hover:bg-white/10;
   }
 }

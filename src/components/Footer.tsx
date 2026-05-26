@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { businessInfo } from "@/data/businessInfo";
+import { siteConfig } from "@/data/siteConfig";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#070908] pb-24 pt-10 md:pb-10">
-      <div className="content-shell grid gap-7 text-sm text-[#cfc7bb] sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-white/10 bg-[#070908] pb-24 pt-12 md:pb-12">
+      <div className="content-shell grid gap-8 text-sm text-[#cfc7bb] sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-black uppercase tracking-wider text-white">{businessInfo.name}</p>
           <p className="mt-3 max-w-xs leading-6">{businessInfo.tagline}</p>
@@ -26,17 +28,24 @@ export function Footer() {
           </div>
         </div>
         <nav aria-label="Footer navigation" className="flex flex-col items-start gap-3">
-          <a href="#menu">Menu</a>
-          <a href="#hours">Opening hours</a>
+          {siteConfig.navigation.slice(0, 4).map((link) => (
+            <Link key={link.href} href={link.href} className="hover:text-white">
+              {link.label}
+            </Link>
+          ))}
           <a
             href={businessInfo.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-white"
           >
             Instagram
           </a>
         </nav>
       </div>
+      <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs text-[#928a7e]">
+        {businessInfo.name}. Ordering and payment are handled separately outside this website.
+      </p>
     </footer>
   );
 }

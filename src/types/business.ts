@@ -41,7 +41,6 @@ export interface BusinessInfo {
   };
   hours: OpeningHoursEntry[];
   breakfastLunchNote: string;
-  holidayHoursNote: string;
   ratingSnapshot: {
     rating: number;
     reviewCount: number;

@@ -26,14 +26,14 @@ export const popularPicks: MenuItem[] = [
     name: "Creamy Cajun Chicken Pasta",
     description: "A filling nutritional main with bold flavour.",
     price: "\u00a36.95",
-    tags: ["popular", "high-protein"],
+    tags: ["popular"],
   },
   {
     id: "popular-rice-bowl",
     name: "Lemon Pepper Chicken Rice Bowl",
-    description: "Fresh, simple and protein-focused.",
+    description: "Fresh, simple and full of flavour.",
     price: "\u00a36.95",
-    tags: ["popular", "high-protein"],
+    tags: ["popular"],
   },
   {
     id: "popular-smoothies",
@@ -188,6 +188,14 @@ export const menuCategories: MenuCategory[] = [
   },
 ];
 
-export const highProteinFeatureItems = menuCategories
-  .flatMap((category) => category.items)
-  .filter((item) => item.tags?.includes("high-protein"));
+const homepageMenuCategoryIds = new Set([
+  "traditional-breakfast-lunch",
+  "traditional-mains",
+  "nutritional-breakfast-lunch",
+  "nutritional-mains",
+  "smoothies",
+]);
+
+export const homepageMenuCategories = menuCategories.filter((category) =>
+  homepageMenuCategoryIds.has(category.id),
+);
