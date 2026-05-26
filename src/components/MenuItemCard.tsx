@@ -1,0 +1,53 @@
+import { MacroBadge } from "@/components/MacroBadge";
+import { PriceLabel } from "@/components/PriceLabel";
+import type { MenuItem } from "@/types/menu";
+
+interface MenuItemCardProps {
+  item: MenuItem;
+}
+
+export function MenuItemCard({ item }: MenuItemCardProps) {
+  return (
+    <article className="menu-tile h-full">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-base font-bold leading-6 text-[#faf6ee]">{item.name}</h3>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {item.isPopular ? (
+              <span className="rounded-full bg-[#a42425] px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-white">
+                Popular
+              </span>
+            ) : null}
+            {item.isVegetarian ? (
+              <span className="rounded-full border border-[#4c8e60]/55 bg-[#183021] px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-[#bce3c4]">
+                Vegetarian
+              </span>
+            ) : null}
+            {item.isUnavailable ? (
+              <span className="rounded-full border border-white/20 px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-[#d5cabe]">
+                Unavailable
+              </span>
+            ) : null}
+            {item.needsVerification ? (
+              <span className="rounded-full border border-[#df9b50]/50 bg-[#322113] px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-[#f4ca95]">
+                Check detail
+              </span>
+            ) : null}
+          </div>
+        </div>
+        <PriceLabel item={item} />
+      </div>
+      {item.description ? <p className="mt-3 text-sm leading-6 text-[#bfb7ab]">{item.description}</p> : null}
+      {item.options ? (
+        <ul className="mt-4 grid gap-2 text-sm text-[#eee1d1]" aria-label={`${item.name} sizes and prices`}>
+          {item.options.map((option) => (
+            <li key={option} className="rounded-md bg-white/[0.04] px-3 py-2">
+              {option}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {item.macros ? <MacroBadge macros={item.macros} /> : null}
+    </article>
+  );
+}

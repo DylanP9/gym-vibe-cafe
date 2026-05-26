@@ -1,67 +1,91 @@
 import type { MenuCategory, MenuItem } from "@/types/menu";
 
-export const popularPicks: MenuItem[] = [
-  {
-    id: "popular-full-scottish",
-    name: "Full Scottish Breakfast",
-    description: "A proper café breakfast to start the day.",
-    price: "\u00a36.95 / XL \u00a310.95",
-    tags: ["popular", "breakfast", "traditional"],
-  },
-  {
-    id: "popular-filled-rolls",
-    name: "Hot Filled Rolls",
-    price: "\u00a32.85 / double \u00a33.75",
-    tags: ["popular", "breakfast", "traditional"],
-  },
-  {
-    id: "popular-pancakes",
-    name: "High Protein Pancakes with Mixed Fruit",
-    description: "A sweeter high-protein choice with mixed fruit.",
-    price: "\u00a35.45",
-    tags: ["popular", "high-protein", "breakfast"],
-  },
-  {
-    id: "popular-cajun-pasta",
-    name: "Creamy Cajun Chicken Pasta",
-    description: "A filling nutritional main with bold flavour.",
-    price: "\u00a36.95",
-    tags: ["popular"],
-  },
-  {
-    id: "popular-rice-bowl",
-    name: "Lemon Pepper Chicken Rice Bowl",
-    description: "Fresh, simple and full of flavour.",
-    price: "\u00a36.95",
-    tags: ["popular"],
-  },
-  {
-    id: "popular-smoothies",
-    name: "Fresh Frozen Fruit Smoothies",
-    description: "Cold fruit smoothies with optional protein and chia seeds.",
-    price: "\u00a33.95",
-    tags: ["popular", "smoothie"],
-  },
-  {
-    id: "popular-loaded-fries",
-    name: "Loaded Fries, Chicken or Mince",
-    description: "A comfort-food hit with chicken or mince.",
-    price: "\u00a36.45",
-    tags: ["popular"],
-  },
-];
+const hotFilledRolls: MenuItem = {
+  id: "hot-filled-rolls",
+  name: "Hot Filled Rolls",
+  price: "£2.85",
+  secondaryPrice: "Double £3.75",
+  isPopular: true,
+};
+
+const fullScottishBreakfast: MenuItem = {
+  id: "full-scottish-breakfast",
+  name: "Full Scottish Breakfast",
+  price: "£6.95",
+  secondaryPrice: "XL £10.95",
+  isPopular: true,
+};
+
+const highProteinPancakes: MenuItem = {
+  id: "high-protein-pancakes",
+  name: "High Protein Pancakes with Mixed Fruit",
+  price: "£5.45",
+  isPopular: true,
+};
+
+const honeyGarlicMac: MenuItem = {
+  id: "honey-garlic-butter-chicken-mac",
+  name: "Honey Garlic Butter Chicken Mac & Cheese",
+  price: "£6.95",
+  isPopular: true,
+  macros: { calories: 588, proteinGrams: 59, carbsGrams: 52, fatGrams: 16 },
+};
+
+const lemonPepperBowl: MenuItem = {
+  id: "lemon-pepper-chicken-rice-bowl",
+  name: "Lemon Pepper Chicken Rice Bowl",
+  price: "£6.95",
+  isPopular: true,
+  macros: { calories: 521, proteinGrams: 46, carbsGrams: 46, fatGrams: 17 },
+};
+
+const creamyCajunPasta: MenuItem = {
+  id: "creamy-cajun-chicken-pasta",
+  name: "Creamy Cajun Chicken Pasta",
+  price: "£6.95",
+  isPopular: true,
+  macros: { calories: 523, proteinGrams: 64, carbsGrams: 42, fatGrams: 11 },
+};
+
+const loadedFries: MenuItem = {
+  id: "loaded-fries-chicken-mince",
+  name: "Loaded Fries, Chicken or Mince",
+  price: "£6.45",
+  isPopular: true,
+};
 
 export const menuCategories: MenuCategory[] = [
   {
+    id: "popular-picks",
+    title: "Popular Picks",
+    description: "Customer favourites from across the in-store menu.",
+    items: [
+      fullScottishBreakfast,
+      hotFilledRolls,
+      highProteinPancakes,
+      creamyCajunPasta,
+      lemonPepperBowl,
+      {
+        id: "fresh-frozen-smoothies-highlight",
+        name: "Fresh Frozen Fruit Smoothies",
+        price: "£3.95",
+        priceNote: "Add protein & chia seeds £1.50",
+        isPopular: true,
+      },
+      loadedFries,
+      honeyGarlicMac,
+    ],
+  },
+  {
     id: "traditional-breakfast-lunch",
     title: "Traditional Breakfast & Lunch",
-    availabilityNote: "Available until 3pm",
+    availabilityNote: "Available until 3pm.",
     items: [
-      { id: "hot-filled-rolls", name: "Hot Filled Rolls", price: "\u00a32.85 / double \u00a33.75", tags: ["breakfast", "traditional", "popular"] },
-      { id: "full-scottish", name: "Full Scottish Breakfast", price: "\u00a36.95 / XL \u00a310.95", tags: ["breakfast", "traditional", "popular"] },
-      { id: "vegetarian-breakfast", name: "Vegetarian Breakfast", price: "\u00a36.95", tags: ["breakfast", "traditional"] },
-      { id: "french-toast", name: "French Toast with Topping", price: "\u00a34.50", tags: ["breakfast"] },
-      { id: "eggs-on-toast", name: "Eggs on Toast", price: "\u00a34.50", tags: ["breakfast"] },
+      hotFilledRolls,
+      fullScottishBreakfast,
+      { id: "vegetarian-breakfast", name: "Vegetarian Breakfast", price: "£6.95", isVegetarian: true },
+      { id: "french-toast-topping", name: "French Toast with Topping", price: "£4.50" },
+      { id: "eggs-on-toast", name: "Eggs on Toast", price: "£4.50" },
     ],
   },
   {
@@ -69,63 +93,70 @@ export const menuCategories: MenuCategory[] = [
     title: "Kids Meals",
     customerNote: "All kids meals served with a side and drink.",
     items: [
-      { id: "kids-macaroni", name: "Macaroni Cheese", price: "\u00a34.95", tags: ["kids"] },
-      { id: "kids-pizza", name: "Pizza", price: "\u00a34.95", tags: ["kids"] },
-      { id: "kids-popcorn-chicken", name: "Popcorn Chicken", price: "\u00a34.95", tags: ["kids"] },
-      { id: "kids-fish-fingers", name: "Fish Fingers", price: "\u00a34.95", tags: ["kids"] },
+      { id: "kids-macaroni-cheese", name: "Macaroni Cheese", price: "£4.95" },
+      { id: "kids-pizza", name: "Pizza", price: "£4.95" },
+      { id: "kids-popcorn-chicken", name: "Popcorn Chicken", price: "£4.95" },
+      { id: "kids-fish-fingers", name: "Fish Fingers", price: "£4.95" },
     ],
   },
   {
     id: "appetizers",
     title: "Appetizers",
     items: [
-      { id: "soup", name: "Homemade Soup", price: "\u00a32.45 / large \u00a32.95" },
-      { id: "halloumi-fries", name: "Halloumi Fries & Chilli Jam", price: "\u00a34.50" },
-      { id: "onion-rings", name: "Onion Rings", price: "\u00a33.50" },
-      { id: "chicken-bites", name: "100% Chicken Bites", price: "\u00a34.95" },
-      { id: "popcorn-chicken", name: "Popcorn Chicken", price: "\u00a34.95" },
-      { id: "fries", name: "Fries / Seasoned Fries", price: "\u00a32.95 / \u00a33.95" },
-      { id: "nachos", name: "Nachos / Loaded Nachos", price: "\u00a34.95 / \u00a36.95" },
+      { id: "homemade-soup", name: "Homemade Soup", price: "£2.45", secondaryPrice: "Large £2.95" },
+      { id: "halloumi-fries-chilli-jam", name: "Halloumi Fries & Chilli Jam", price: "£4.50" },
+      { id: "onion-rings", name: "Onion Rings", price: "£3.50" },
+      { id: "chicken-bites", name: "100% Chicken Bites", price: "£4.95" },
+      { id: "popcorn-chicken", name: "Popcorn Chicken", price: "£4.95" },
+      { id: "fries", name: "Fries", price: "£2.95" },
+      { id: "seasoned-fries", name: "Seasoned Fries", price: "£3.95" },
+      { id: "nachos", name: "Nachos", price: "£4.95" },
+      { id: "loaded-nachos", name: "Loaded Nachos", price: "£6.95" },
     ],
   },
   {
     id: "traditional-mains",
     title: "Traditional Mains",
     items: [
-      { id: "mince-tatties", name: "Steak Mince & Tatties", price: "\u00a36.95", tags: ["traditional"] },
-      { id: "fish-chips", name: "Fish & Chips", price: "\u00a36.50", tags: ["traditional"] },
-      {
-        id: "macaroni-chips",
-        name: "Macaroni Cheese & Chips",
-        priceNote: "Price to be confirmed",
-        needsVerification: true,
-        tags: ["traditional", "verify-price"],
-      },
-      { id: "scotch-pie", name: "Scotch Pie, Chips & Beans", price: "\u00a35.45", tags: ["traditional"] },
-      { id: "chicken-curry", name: "Breast of Chicken Curry & Rice", price: "\u00a36.95", tags: ["traditional"] },
-      { id: "hotdog", name: "Hotdog with Toppings", price: "\u00a34.65", tags: ["traditional"] },
-      { id: "beef-burger", name: "Handmade Beef Burger + Chips", price: "\u00a36.50", tags: ["traditional"] },
-      { id: "chicken-burger", name: "Chicken Burger + Chips", price: "\u00a35.95", tags: ["traditional"] },
-      { id: "chilli-con-carne", name: "Chilli Con Carne + Rice", price: "\u00a36.95", tags: ["traditional"] },
+      { id: "steak-mince-tatties", name: "Steak Mince & Tatties", price: "£6.95" },
+      { id: "fish-chips", name: "Fish & Chips", price: "£6.50" },
+      { id: "macaroni-cheese-chips", name: "Macaroni Cheese & Chips", price: "£6.50" },
+      { id: "scotch-pie-chips-beans", name: "Scotch Pie, Chips & Beans", price: "£5.45" },
+      { id: "chicken-curry-rice", name: "Breast of Chicken Curry & Rice", price: "£6.95" },
+      { id: "hotdog-toppings", name: "Hotdog with Toppings", price: "£4.65" },
+      { id: "beef-burger-chips", name: "Handmade Beef Burger + Chips", price: "£6.50" },
+      { id: "chicken-burger-chips", name: "Chicken Burger + Chips", price: "£5.95" },
+      { id: "chilli-con-carne-rice", name: "Chilli Con Carne + Rice", price: "£6.95" },
     ],
   },
   {
     id: "build-your-own",
     title: "Build Your Own",
-    availabilityNote: "Available until 3pm",
-    customerNote: "Ask in-store for current build-your-own options and prices.",
-    items: [],
+    availabilityNote: "Available until 3pm.",
+    description:
+      "Choose your bread/base, filling, salad and dressing. This is displayed as an in-store menu guide only, not an online order builder.",
+    customerNote: "Ask in café for current build-your-own options.",
+    items: [
+      { id: "cold-filled-roll", name: "Cold Filled Roll", price: "White £2.65", secondaryPrice: "Whole £2.95" },
+      { id: "sandwich", name: "Sandwich", price: "White £2.65", secondaryPrice: "Whole £2.95" },
+      { id: "toastie", name: "Toastie", price: "White £4.00", secondaryPrice: "Whole £4.25" },
+      { id: "panini", name: "Panini", price: "White £4.45", secondaryPrice: "Whole £4.75" },
+      { id: "sub-roll", name: "12-inch Sub Roll", price: "White £4.45", secondaryPrice: "Whole £4.75" },
+      { id: "wrap", name: "Wrap", price: "White £4.45", secondaryPrice: "Whole £4.75" },
+      { id: "baked-potato", name: "Baked Potato", price: "£4.95" },
+      { id: "pasta-salad-box", name: "Pasta & Salad Box", price: "White £4.45", secondaryPrice: "Whole £4.75" },
+    ],
+    addOns: [
+      { name: "Additional fillings", price: "+£0.95" },
+      { name: "Additional salad box option", price: "+£0.75" },
+    ],
     optionGroups: [
       {
-        title: "Choose a base",
-        options: ["Cold Filled Roll", "Sandwich", "Toastie", "Panini", "12-inch Sub Roll", "Wrap", "Baked Potato", "Pasta & Salad Box"],
-      },
-      {
         title: "Fillings",
-        options: ["Coronation Chicken", "Mexican Chicken", "Smoked Chilli Ham", "Chicken Tikka", "Chicken Mayo", "Baked Beans", "Cheese Savoury", "Sweetcorn", "Coleslaw", "Egg", "Tuna Mayo", "Turkey"],
+        options: ["Coronation Chicken", "Mexican Chicken", "Sweet Chilli", "Chicken Tikka", "Chicken Mayo", "Baked Beans", "Cheese Savoury", "Cheese", "Sweetcorn", "Ham", "Coleslaw", "Egg", "Tuna Mayo", "Turkey"],
       },
       {
-        title: "Salad options",
+        title: "Salad Options",
         options: ["Lettuce", "Tomato", "Cucumber", "Onion", "Red Onion", "Pepper", "Jalapeno", "Branston Pickle"],
       },
       {
@@ -137,65 +168,108 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "nutritional-breakfast-lunch",
     title: "Nutritional Breakfast & Lunch",
-    availabilityNote: "Available until 3pm",
+    availabilityNote: "Available until 3pm.",
     items: [
-      { id: "eggs-benedict", name: "Eggs Benedict", price: "\u00a36.95", tags: ["breakfast"] },
-      { id: "eggs-florentine", name: "Eggs Florentine", price: "\u00a35.95", tags: ["breakfast"] },
-      { id: "avocado-salmon-egg", name: "Avocado, Salmon & Egg", price: "\u00a38.95", tags: ["breakfast"] },
-      { id: "protein-oats", name: "Protein Packed Overnight Oats", price: "\u00a34.45", tags: ["breakfast", "high-protein"] },
-      { id: "vitality-bowl", name: "High Protein Vitality Bowl", price: "\u00a35.95", tags: ["breakfast", "high-protein"] },
-      { id: "chicken-sausage-eggs", name: "Homemade Chicken Sausage with Toast & Eggs", price: "\u00a35.95", tags: ["breakfast"] },
-      { id: "protein-pancakes", name: "High Protein Pancakes with Mixed Fruit", price: "\u00a35.45", tags: ["breakfast", "high-protein", "popular"] },
+      { id: "eggs-benedict", name: "Eggs Benedict", price: "£6.95" },
+      { id: "eggs-florentine", name: "Eggs Florentine", price: "£5.95" },
+      { id: "avocado-salmon-egg", name: "Avocado, Salmon & Egg", price: "£8.95" },
+      { id: "protein-overnight-oats", name: "Protein Packed Overnight Oats", price: "£4.45" },
+      { id: "high-protein-vitality-bowl", name: "High Protein Vitality Bowl", price: "£5.95" },
+      { id: "chicken-sausage-toast-eggs", name: "Homemade Chicken Sausage with Toast & Eggs", price: "£5.95" },
+      highProteinPancakes,
     ],
   },
   {
     id: "nutritional-mains",
     title: "Nutritional Mains",
+    description:
+      "No artificial ingredients, minimally processed foods and minimal preservatives. Food cooked using healthy cooking methods and healthy oils.",
+    customerNote:
+      "Macros are based on supplied café menu-board artwork and may vary slightly by portion and preparation.",
     items: [
-      { id: "honey-chicken-mac", name: "Honey Garlic Butter Chicken Mac & Cheese", price: "\u00a36.95" },
-      { id: "salt-pepper-chicken", name: "Crispy Salt & Pepper Chicken & Chips", price: "\u00a36.95" },
-      { id: "chipotle-steak", name: "Creamy Chipotle Steak & Potatoes", price: "\u00a37.95" },
-      { id: "lemon-pepper-rice", name: "Lemon Pepper Chicken Rice Bowl", price: "\u00a36.95", tags: ["popular"] },
-      { id: "garlic-cajun-mash", name: "Creamy Garlic Herb Cajun Chicken & Mash", price: "\u00a36.95" },
-      { id: "cajun-pasta", name: "Creamy Cajun Chicken Pasta", price: "\u00a36.95", tags: ["popular"] },
-      { id: "shrimp-linguine", name: "Creamy Garlic Shrimp Linguine", price: "\u00a36.95" },
-      { id: "salmon-ramen", name: "Creamy Spicy Salmon Ramen Noodles", price: "\u00a37.95" },
+      honeyGarlicMac,
+      { id: "crispy-salt-pepper-chicken-chips", name: "Crispy Salt & Pepper Chicken & Chips", price: "£6.95", macros: { calories: 438, proteinGrams: 40, carbsGrams: 47, fatGrams: 10 } },
+      { id: "chipotle-steak-potatoes", name: "Creamy Chipotle Steak & Potatoes", price: "£7.95", macros: { calories: 532, proteinGrams: 50, carbsGrams: 47, fatGrams: 12 } },
+      lemonPepperBowl,
+      { id: "garlic-herb-cajun-chicken-mash", name: "Creamy Garlic Herb Cajun Chicken & Mash", price: "£6.95", macros: { calories: 514, proteinGrams: 55, carbsGrams: 42, fatGrams: 14 } },
+      creamyCajunPasta,
+      { id: "garlic-shrimp-linguine", name: "Creamy Garlic Shrimp Linguine", price: "£6.95", macros: { calories: 483, proteinGrams: 51, carbsGrams: 45, fatGrams: 11 } },
+      { id: "spicy-salmon-ramen", name: "Creamy Spicy Salmon Ramen Noodles", price: "£7.95", macros: { calories: 543, proteinGrams: 44, carbsGrams: 40, fatGrams: 23 } },
     ],
   },
   {
     id: "smoothies",
     title: "Fresh Frozen Fruit Smoothies",
-    subtitle: "All smoothies \u00a33.95",
-    customerNote: "Add protein & chia seeds: \u00a31.50",
+    priceNote: "All smoothies £3.95. Add protein & chia seeds £1.50.",
     items: [
-      { id: "green-reviver", name: "Green Reviver", price: "\u00a33.95", tags: ["smoothie"] },
-      { id: "acai-kick", name: "Acai Kick", price: "\u00a33.95", tags: ["smoothie"] },
-      { id: "blue-blast", name: "Blue Blast", price: "\u00a33.95", tags: ["smoothie"] },
-      { id: "super-green", name: "Super Green", price: "\u00a33.95", tags: ["smoothie"] },
-      { id: "passion-storm", name: "Passion Storm", price: "\u00a33.95", tags: ["smoothie"] },
-      { id: "ginger-beats", name: "Ginger Beats", price: "\u00a33.95", tags: ["smoothie"] },
+      { id: "green-reviver", name: "Green Reviver", price: "£3.95" },
+      { id: "acai-kick", name: "Acai Kick", price: "£3.95" },
+      { id: "blue-blast", name: "Blue Blast", price: "£3.95" },
+      { id: "super-green", name: "Super Green", price: "£3.95" },
+      { id: "passion-storm", name: "Passion Storm", price: "£3.95" },
+      { id: "ginger-beets", name: "Ginger Beets", price: "£3.95" },
     ],
+    addOns: [{ name: "Protein & chia seeds", price: "£1.50" }],
   },
   {
     id: "extras",
     title: "Extras",
     items: [
-      { id: "chicken-strips", name: "Succulent Chicken Strips", price: "\u00a35.95" },
-      { id: "mixed-greens", name: "Mixed Greens with Garlic and Pepper", price: "\u00a33.95" },
-      { id: "sweet-potato-fries", name: "Sweet Potato Fries", price: "\u00a33.95" },
-      { id: "loaded-fries", name: "Loaded Fries, Chicken or Mince", price: "\u00a36.45", tags: ["popular"] },
+      { id: "chicken-strips", name: "Succulent Chicken Strips", price: "£5.95" },
+      { id: "mixed-greens", name: "Mixed Greens with Garlic and Pepper", price: "£3.95" },
+      { id: "sweet-potato-fries", name: "Sweet Potato Fries", price: "£3.95" },
+      loadedFries,
+    ],
+  },
+  {
+    id: "coffee",
+    title: "Coffee",
+    description: "Work hard. Drink coffee.",
+    items: [
+      { id: "flat-white", name: "Flat White", options: ["12oz Regular £2.95", "16oz Large £3.45", "16oz Iced £4.55"] },
+      { id: "latte", name: "Latte", options: ["12oz Regular £2.95", "16oz Large £3.45", "16oz Iced £4.55"] },
+      { id: "cappuccino", name: "Cappuccino", options: ["12oz Regular £2.95", "16oz Large £3.45", "16oz Iced £4.55"] },
+      { id: "americano", name: "Americano", options: ["12oz Regular £2.30", "16oz Large £2.95", "16oz Iced £3.95"] },
+      { id: "espresso", name: "Espresso", options: ["12oz Regular £1.80", "16oz Large £2.20"] },
+      { id: "macchiato", name: "Macchiato", options: ["12oz Regular £3.95", "16oz Large £4.45", "16oz Iced £5.45"] },
+      { id: "mocha", name: "Mocha", options: ["12oz Regular £3.95", "16oz Large £4.45", "16oz Iced £5.45"] },
+    ],
+    addOns: [{ name: "Syrup shot", price: "£1.00" }],
+    optionGroups: [
+      {
+        title: "Syrup Options",
+        options: ["Caramel", "Sugar Free Caramel", "Hazelnut", "Toffee Nut", "Vanilla", "Sugar Free Vanilla", "Chai Tea", "Brown Sugar", "Chocolate", "Cinnamon"],
+      },
+    ],
+  },
+  {
+    id: "other-drinks",
+    title: "Other Drinks",
+    items: [
+      { id: "green-matcha", name: "Green Matcha", options: ["12oz Regular £3.95", "16oz Iced £4.95"] },
+      { id: "green-tea", name: "Green Tea", options: ["12oz Regular £1.95", "16oz Iced £2.95"] },
+      { id: "hibiscus-tea", name: "Hibiscus Tea", options: ["12oz Regular £2.25", "16oz Iced £3.25"] },
+      { id: "peppermint-tea", name: "Peppermint Tea", options: ["12oz Regular £1.95", "16oz Iced £2.95"] },
+      { id: "breakfast-tea", name: "Breakfast Tea", options: ["12oz Regular £1.55"] },
+      { id: "chocolate", name: "Chocolate", options: ["12oz Regular £2.95", "16oz Iced £3.95"] },
+    ],
+    addOns: [{ name: "Marshmallows & cream", price: "£1.00" }],
+  },
+  {
+    id: "desserts",
+    title: "Desserts",
+    items: [
+      { id: "chocolate-fudge-cake", name: "Chocolate Fudge Cake", price: "£3.50", secondaryPrice: "With ice cream or custard £4.50" },
+      { id: "apple-pie", name: "Apple Pie", price: "£2.50", secondaryPrice: "With ice cream or custard £3.50" },
+      { id: "caramel-shortcake", name: "Old School Caramel Shortcake", price: "£2.50", secondaryPrice: "With ice cream or custard £3.50" },
+      { id: "birthday-cake", name: "Birthday Cake", price: "£2.20", secondaryPrice: "With ice cream or custard £3.20" },
+      { id: "ginger-bread-cake", name: "Ginger Bread Cake", price: "£2.20", secondaryPrice: "With ice cream or custard £3.20" },
     ],
   },
 ];
 
-const homepageMenuCategoryIds = new Set([
-  "traditional-breakfast-lunch",
-  "traditional-mains",
-  "nutritional-breakfast-lunch",
-  "nutritional-mains",
-  "smoothies",
-]);
+export const popularPicks = menuCategories[0].items;
 
 export const homepageMenuCategories = menuCategories.filter((category) =>
-  homepageMenuCategoryIds.has(category.id),
+  ["popular-picks", "nutritional-mains"].includes(category.id),
 );

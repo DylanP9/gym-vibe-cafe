@@ -1,27 +1,63 @@
+import { useRef, type KeyboardEvent } from "react";
 import type { MenuCategory } from "@/types/menu";
 
 interface MenuCategoryTabsProps {
   categories: MenuCategory[];
-  label?: string;
+  selectedId: string;
+  onSelect: (id: string) => void;
 }
 
-export function MenuCategoryTabs({
-  categories,
-  label = "Menu categories",
-}: MenuCategoryTabsProps) {
+export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCategoryTabsProps) {
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  function moveSelection(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const lastIndex = categories.length - 1;
+    let nextIndex: number | null = null;
+
+    if (event.key === "ArrowRight") nextIndex = index === lastIndex ? 0 : index + 1;
+    if (event.key === "ArrowLeft") nextIndex = index === 0 ? lastIndex : index - 1;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = lastIndex;
+
+    if (nextIndex !== null) {
+      event.preventDefault();
+      onSelect(categories[nextIndex].id);
+      tabRefs.current[nextIndex]?.focus();
+    }
+  }
+
   return (
-    <nav aria-label={label} className="mb-9">
-      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0">
-        {categories.map((category) => (
-          <a
-            key={category.id}
-            href={`#${category.id}`}
-            className="shrink-0 rounded-full border border-white/15 bg-[#111312] px-4 py-2.5 text-sm font-semibold text-[#e6dfd4] transition-colors hover:border-[#bd3334] hover:bg-[#211113] hover:text-white"
-          >
-            {category.title}
-          </a>
-        ))}
+    <div className="sticky top-[4.45rem] z-20 -mx-4 mb-6 border-y border-white/10 bg-[#0d0d0b]/95 px-4 py-3 backdrop-blur lg:hidden">
+      <div className="flex snap-x gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Choose a menu category">
+        {categories.map((category, index) => {
+          const selected = category.id === selectedId;
+
+          return (
+            <button
+              key={category.id}
+              id={`menu-tab-${category.id}`}
+              ref={(node) => {
+                tabRefs.current[index] = node;
+              }}
+              type="button"
+              role="tab"
+              aria-selected={selected}
+              aria-controls={`menu-panel-${category.id}`}
+              tabIndex={selected ? 0 : -1}
+              onClick={() => onSelect(category.id)}
+              onKeyDown={(event) => moveSelection(event, index)}
+              className={`min-h-12 shrink-0 snap-start rounded-full border px-4 py-3 text-sm font-semibold transition ${
+                selected
+                  ? "border-[#c63a3c] bg-[#a42425] text-white"
+                  : "border-white/15 bg-[#171413] text-[#e4daca] hover:border-white/30"
+              }`}
+            >
+              {category.title}
+              {selected ? <span className="sr-only">, selected</span> : null}
+            </button>
+          );
+        })}
       </div>
-    </nav>
+    </div>
   );
 }

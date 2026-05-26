@@ -1,9 +1,8 @@
 import { ActionLink } from "@/components/ActionLink";
 import { Footer } from "@/components/Footer";
-import { FullMenuSection } from "@/components/FullMenuSection";
 import { Header } from "@/components/Header";
+import { MenuBrowser } from "@/components/MenuBrowser";
 import { PageIntro } from "@/components/PageIntro";
-import { PopularPicksSection } from "@/components/PopularPicksSection";
 import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
 import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
@@ -11,7 +10,7 @@ import { buildPageMetadata } from "@/data/siteConfig";
 export const metadata = buildPageMetadata({
   title: "Menu | Breakfast, Meals & Smoothies",
   description:
-    "Browse the Gym Vibe Café menu in Kinning Park, Glasgow, including breakfast favourites, nutritional mains and fresh frozen fruit smoothies.",
+    "Browse the Gym Vibe Café in-store menu in Kinning Park, Glasgow, including breakfast, high-protein mains, smoothies, coffee and desserts.",
   path: "/menu",
 });
 
@@ -36,11 +35,10 @@ export default function MenuPage() {
             </>
           }
         >
-          Browse a readable menu for café favourites and fuel-focused choices.
-          Prices and availability may vary.
+          Select a category to browse café favourites, high-protein meals,
+          smoothies, coffee and desserts with clear in-store menu-board prices.
         </PageIntro>
-        <PopularPicksSection showMenuLink={false} />
-        <FullMenuSection full />
+        <MenuBrowser />
       </main>
       <Footer />
       <StickyMobileActionBar />

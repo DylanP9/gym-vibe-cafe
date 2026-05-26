@@ -46,7 +46,7 @@ Correcting inaccurate external directory or map listings is a business-owner tas
 | Route | Purpose |
 | --- | --- |
 | `/` | Premium homepage with menu preview, reference artwork, meal-prep information, location, FAQs and Instagram CTA |
-| `/menu` | Focused readable full-menu page with category jump links and visit actions |
+| `/menu` | App-style in-store menu browser with selectable categories, prices, macros and visit actions |
 | `/location` | Verified location, directions, phone details and supplied opening hours |
 | `/meal-prep` | Cautious information page directing visitors to confirm current availability with the café |
 
@@ -119,7 +119,8 @@ Only add the Search Console verification value after it is supplied by the autho
 - Reworked the homepage into a premium mobile-first layout with stronger branding, CTAs and high-contrast styling.
 - Added accessible mobile navigation and the persistent mobile Call, Directions and Instagram action bar.
 - Added supplied logo, menu-board reference artwork and meal-prep reference artwork with fixed dimensions and meaningful labelling.
-- Added a readable menu preview with mobile-scrolling category links and popular-item indicators.
+- Added a concise homepage menu preview fed from the central in-store menu data.
+- Added an app-style `/menu` browser with desktop category navigation, mobile tabs, price variants, add-ons and supplied macro displays.
 - Added cautious meal-prep information without ordering, payment or availability promises.
 - Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
 - Added structured spaces for future genuine gallery photography without inserting fake images.
@@ -130,6 +131,22 @@ Only add the Search Console verification value after it is supplied by the autho
 - Added skip navigation, visible focus states, semantic page structure and accessible expandable mobile navigation.
 - Added an Instagram CTA without scripts or a live embed.
 - Organised supplied artwork under `public/images/`.
+
+## Menu Data Maintenance
+
+The website-readable menu lives in `src/data/menu.ts`, with its shared data model in `src/types/menu.ts`. It is the single source used by both the homepage highlights and the full `/menu` browser.
+
+- To update a price, edit the relevant item's `price`, `secondaryPrice` or size `options` entry in `src/data/menu.ts`.
+- To add a category, add a `MenuCategory` object with a unique `id`, title and items to `menuCategories`.
+- To add macro information, provide `calories`, `proteinGrams`, `carbsGrams` and `fatGrams` in an item's `macros` value only when verified.
+- To highlight an item, set `isPopular: true`.
+- To identify a vegetarian choice, set `isVegetarian: true`.
+- To show an unavailable item, set `isUnavailable: true` only after confirmation.
+- To flag a detail requiring confirmation, set `needsVerification: true`.
+- Build-your-own options, drinks variants and extras are informational displays only; they do not create online customisation or ordering.
+- Current website prices are based on supplied in-store menu-board information. Delivery-platform prices may differ and must not be copied into the in-store menu without confirmation.
+
+Before launch, confirm all prices, smoothie prices, coffee prices, published high-protein macros and whether any items are currently unavailable. Approved delivery or collection links can be supplied later only if those external actions are wanted.
 
 ## Remaining Code Tasks
 
@@ -154,7 +171,10 @@ Only add the Search Console verification value after it is supplied by the autho
 ## Remaining Business / Owner Tasks
 
 - Confirm the current opening hours before launch.
-- Confirm all full menu items and prices, including the currently unverified `Macaroni Cheese & Chips` price.
+- Confirm all full menu items and prices before launch.
+- Confirm smoothie and coffee prices against current in-store information.
+- Confirm the supplied high-protein macro information can be published.
+- Confirm whether any menu items are currently unavailable.
 - Confirm current meal-prep availability, choices, prices and collection details.
 - Confirm whether any calories or macros may be published from an authoritative source.
 - Supply a high-resolution approved logo, preferably SVG or transparent PNG.
