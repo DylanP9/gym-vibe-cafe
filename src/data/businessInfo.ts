@@ -40,5 +40,6 @@ export const businessInfo: BusinessInfo = {
     rating: 4.9,
     reviewCount: 121,
     source: "Google rating snapshot",
+    capturedLabel: "supplied May 2026",
   },
 };

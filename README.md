@@ -4,7 +4,7 @@
 
 Gym Vibe Café is a premium, mobile-first local business website for a café in Kinning Park, Glasgow. It helps visitors understand the food offering, browse a readable menu, check opening hours, call the café, open verified directions, follow Instagram and cautiously enquire about current meal-prep availability.
 
-The website is informational only. It deliberately does not process orders, payments, bookings, customer accounts or any administrative function.
+The website is primarily customer-facing and can optionally create Square-hosted checkout links from the menu basket. Card details and payment processing are handled by Square, not by this website. It does not manage bookings, customer accounts or administrative functions.
 
 ## Audit And Current Status
 
@@ -128,6 +128,26 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-real-google-verification-value
 
 Only add the Search Console verification value after it is supplied by the authorised account owner.
 
+### Square Checkout Configuration
+
+The menu page can create Square-hosted checkout links from the customer's basket. Card details are entered on Square's checkout page, not on this website.
+
+Required server-side environment values:
+
+```bash
+SQUARE_ACCESS_TOKEN=your-square-access-token
+SQUARE_LOCATION_ID=your-square-location-id
+SQUARE_ENVIRONMENT=sandbox
+```
+
+Use `SQUARE_ENVIRONMENT=production` only after the owner has supplied production credentials and completed live test orders. Sandbox requests use Square's sandbox API URL; production requests use Square's production API URL.
+
+Optional public value:
+
+```bash
+NEXT_PUBLIC_GOOGLE_REVIEWS_URL=your-approved-google-reviews-link
+```
+
 ## Completed Code Tasks
 
 - Built the Next.js App Router, TypeScript and Tailwind CSS website foundation.
@@ -231,10 +251,8 @@ Basic Vercel Web Analytics is configured for anonymous visitor and page-view rep
 
 ## Out Of Scope
 
-- Payments
-- Checkout
-- Cart or basket
-- Direct online ordering
+- On-site card collection
+- Custom payment processing
 - Booking
 - Customer accounts
 - Admin dashboard

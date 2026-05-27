@@ -1,11 +1,13 @@
 import { MenuItemCard } from "@/components/MenuItemCard";
+import type { OrderableMenuItem } from "@/lib/menuPricing";
 import type { MenuCategory } from "@/types/menu";
 
 interface MenuCategoryPanelProps {
   category: MenuCategory;
+  onAddToCart?: (item: OrderableMenuItem) => void;
 }
 
-export function MenuCategoryPanel({ category }: MenuCategoryPanelProps) {
+export function MenuCategoryPanel({ category, onAddToCart }: MenuCategoryPanelProps) {
   return (
     <section id={`menu-panel-${category.id}`} role="tabpanel" aria-label={category.title} className="rounded-2xl border border-white/10 bg-[#11100f] p-4 sm:p-6">
       <header className="mb-6 border-b border-white/10 pb-6">
@@ -18,7 +20,7 @@ export function MenuCategoryPanel({ category }: MenuCategoryPanelProps) {
       </header>
       <div className="grid gap-3 sm:grid-cols-2">
         {category.items.map((item) => (
-          <MenuItemCard key={item.id} item={item} />
+          <MenuItemCard key={item.id} item={item} onAddToCart={onAddToCart} />
         ))}
       </div>
       {category.addOns ? (

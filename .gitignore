@@ -12,6 +12,8 @@
 .DS_Store
 *.log
 .env*
+.codex-tools/
+qa-screenshots/
 
 # typescript
 *.tsbuildinfo

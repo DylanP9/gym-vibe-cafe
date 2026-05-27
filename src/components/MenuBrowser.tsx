@@ -1,14 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CheckoutCart } from "@/components/CheckoutCart";
 import { MenuCategoryPanel } from "@/components/MenuCategoryPanel";
 import { MenuCategorySidebar } from "@/components/MenuCategorySidebar";
 import { MenuCategoryTabs } from "@/components/MenuCategoryTabs";
 import { menuCategories } from "@/data/menu";
+import type { OrderableMenuItem } from "@/lib/menuPricing";
+import type { CartItem } from "@/types/cart";
+
+const cartStorageKey = "gym-vibe-cafe-cart";
 
 export function MenuBrowser() {
   const [selectedId, setSelectedId] = useState(menuCategories[0].id);
-  const category = menuCategories.find((menuCategory) => menuCategory.id === selectedId) ?? menuCategories[0];
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const cartRef = useRef<HTMLDivElement | null>(null);
+  const category =
+    menuCategories.find((menuCategory) => menuCategory.id === selectedId) ??
+    menuCategories[0];
 
   useEffect(() => {
     function selectFromHash() {
@@ -25,6 +34,28 @@ export function MenuBrowser() {
     return () => window.removeEventListener("hashchange", selectFromHash);
   }, []);
 
+  useEffect(() => {
+    const storedCart = window.localStorage.getItem(cartStorageKey);
+
+    if (!storedCart) {
+      return;
+    }
+
+    try {
+      const parsedCart = JSON.parse(storedCart) as CartItem[];
+
+      if (Array.isArray(parsedCart)) {
+        setCartItems(parsedCart);
+      }
+    } catch {
+      window.localStorage.removeItem(cartStorageKey);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem(cartStorageKey, JSON.stringify(cartItems));
+  }, [cartItems]);
+
   function selectCategory(id: string) {
     setSelectedId(id);
     window.history.replaceState(
@@ -34,18 +65,100 @@ export function MenuBrowser() {
     );
   }
 
+  function addToCart(item: OrderableMenuItem) {
+    setCartItems((items) => {
+      const existingItem = items.find((cartItem) => cartItem.id === item.id);
+
+      if (existingItem) {
+        return items.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: Math.min(cartItem.quantity + 1, 20) }
+            : cartItem,
+        );
+      }
+
+      return [
+        ...items,
+        {
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          pricePence: item.pricePence,
+          quantity: 1,
+        },
+      ];
+    });
+
+    if (window.innerWidth < 1280) {
+      window.setTimeout(() => {
+        cartRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+      }, 0);
+    }
+  }
+
+  function incrementCartItem(id: string) {
+    setCartItems((items) =>
+      items.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.min(item.quantity + 1, 20) }
+          : item,
+      ),
+    );
+  }
+
+  function decrementCartItem(id: string) {
+    setCartItems((items) =>
+      items.flatMap((item) => {
+        if (item.id !== id) return [item];
+        if (item.quantity <= 1) return [];
+        return [{ ...item, quantity: item.quantity - 1 }];
+      }),
+    );
+  }
+
+  function removeCartItem(id: string) {
+    setCartItems((items) => items.filter((item) => item.id !== id));
+  }
+
   return (
     <section className="section-shell" aria-label="Browse the menu">
       <div className="content-shell">
         <div className="mb-8 rounded-xl border border-[#a42425]/35 bg-[#151211] p-4 text-sm leading-6 text-[#d9d0c4]">
-          <p>In-store prices are based on supplied café menu-board artwork. Delivery-platform prices may differ.</p>
-          <p className="mt-2">Prices and availability may vary. Please check with the café for the latest information.</p>
-          <p className="mt-2 font-semibold text-[#efcb9c]">Browse only. Ordering and payment are handled separately outside this website.</p>
+          <p>
+            In-store prices are based on supplied cafe menu-board artwork.
+            Delivery-platform prices may differ.
+          </p>
+          <p className="mt-2">
+            Prices and availability may vary. Please check with the cafe for the
+            latest information.
+          </p>
+          <p className="mt-2 font-semibold text-[#efcb9c]">
+            Add available items to your basket and pay securely through Square.
+          </p>
         </div>
-        <MenuCategoryTabs categories={menuCategories} selectedId={selectedId} onSelect={selectCategory} />
-        <div className="grid items-start gap-6 lg:grid-cols-[17rem_minmax(0,1fr)]">
-          <MenuCategorySidebar categories={menuCategories} selectedId={selectedId} onSelect={selectCategory} />
-          <MenuCategoryPanel category={category} />
+        <MenuCategoryTabs
+          categories={menuCategories}
+          selectedId={selectedId}
+          onSelect={selectCategory}
+        />
+        <div className="grid items-start gap-6 xl:grid-cols-[17rem_minmax(0,1fr)_20rem]">
+          <MenuCategorySidebar
+            categories={menuCategories}
+            selectedId={selectedId}
+            onSelect={selectCategory}
+          />
+          <div className="order-2 xl:order-none">
+            <MenuCategoryPanel category={category} onAddToCart={addToCart} />
+          </div>
+          <div ref={cartRef} className="order-1 scroll-mt-48 xl:order-none">
+            <CheckoutCart
+              items={cartItems}
+              onIncrement={incrementCartItem}
+              onDecrement={decrementCartItem}
+              onRemove={removeCartItem}
+              onClear={() => setCartItems([])}
+            />
+          </div>
         </div>
       </div>
     </section>

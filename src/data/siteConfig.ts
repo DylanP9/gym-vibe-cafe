@@ -10,6 +10,7 @@ export const siteConfig = {
   url: configuredUrl || undefined,
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  googleReviewsUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || undefined,
   navigation: [
     { label: "Home", href: "/" },
     { label: "Menu", href: "/menu" },

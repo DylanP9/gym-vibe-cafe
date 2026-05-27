@@ -41,8 +41,10 @@ export default function PrivacyPage() {
                   <p className="mt-2">
                     This website provides information about {businessInfo.name},
                     including its menu, location, opening hours and contact
-                    details. It does not take payments, online orders, bookings
-                    or customer account registrations.
+                    details. If online checkout is available, payment is handled
+                    by Square on a Square-hosted checkout page. This website
+                    does not store card details, bookings or customer account
+                    registrations.
                   </p>
                 </div>
 
@@ -73,8 +75,9 @@ export default function PrivacyPage() {
                   <h3 className="text-lg font-bold text-white">External services</h3>
                   <p className="mt-2">
                     If you use links on this website to call the café, open Google
-                    Maps directions or visit Instagram, those services operate
-                    under their own privacy terms.
+                    Maps directions, visit Instagram or complete a Square
+                    checkout, those services operate under their own privacy
+                    terms.
                   </p>
                 </div>
 

@@ -1,13 +1,17 @@
 import { MacroBadge } from "@/components/MacroBadge";
 import { MenuPhotoSlot } from "@/components/MenuPhotoSlot";
 import { PriceLabel } from "@/components/PriceLabel";
+import { getOrderableMenuItem, type OrderableMenuItem } from "@/lib/menuPricing";
 import type { MenuItem } from "@/types/menu";
 
 interface MenuItemCardProps {
   item: MenuItem;
+  onAddToCart?: (item: OrderableMenuItem) => void;
 }
 
-export function MenuItemCard({ item }: MenuItemCardProps) {
+export function MenuItemCard({ item, onAddToCart }: MenuItemCardProps) {
+  const orderableItem = getOrderableMenuItem(item);
+
   return (
     <article className="menu-tile h-full">
       <MenuPhotoSlot image={item.image} />
@@ -50,6 +54,23 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
         </ul>
       ) : null}
       {item.macros ? <MacroBadge macros={item.macros} /> : null}
+      {onAddToCart ? (
+        <div className="mt-5">
+          {orderableItem ? (
+            <button
+              type="button"
+              onClick={() => onAddToCart(orderableItem)}
+              className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[#ba3032] bg-[#a42425] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:border-[#cc3e40] hover:bg-[#b92c2e]"
+            >
+              Add to basket
+            </button>
+          ) : (
+            <p className="rounded-lg border border-white/10 bg-white/[0.035] px-3 py-2 text-xs leading-5 text-[#bcb3a6]">
+              Ask in cafe for this item or option.
+            </p>
+          )}
+        </div>
+      ) : null}
     </article>
   );
 }

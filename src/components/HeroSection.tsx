@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ActionLink } from "@/components/ActionLink";
 import { businessInfo } from "@/data/businessInfo";
 import { siteAssets } from "@/data/siteAssets";
+import { siteConfig } from "@/data/siteConfig";
 
 export function HeroSection() {
   return (
@@ -70,12 +71,24 @@ export function HeroSection() {
                 <span className="ml-2 text-xl text-[#efcb9c]" aria-hidden="true">★</span>
               </dd>
               <dd className="mt-2 text-sm text-[#c7beaf]">
-                Based on {businessInfo.ratingSnapshot.reviewCount} reviews*
+                Based on {businessInfo.ratingSnapshot.reviewCount} reviews,{" "}
+                {businessInfo.ratingSnapshot.capturedLabel}
               </dd>
             </div>
           </dl>
           <p className="mt-5 text-center text-xs text-[#958c80]">
-            * Google rating snapshot supplied for this website.
+            {siteConfig.googleReviewsUrl ? (
+              <a
+                href={siteConfig.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c9c0b2] underline decoration-[#a42425] underline-offset-4 hover:text-white"
+              >
+                Read the latest Google reviews.
+              </a>
+            ) : (
+              "Google rating snapshot supplied for this website; check Google for the latest reviews."
+            )}
           </p>
         </div>
       </div>

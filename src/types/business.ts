@@ -45,5 +45,6 @@ export interface BusinessInfo {
     rating: number;
     reviewCount: number;
     source: string;
+    capturedLabel: string;
   };
 }
