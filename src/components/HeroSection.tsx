@@ -62,18 +62,16 @@ export function HeroSection() {
               </p>
             </div>
           </div>
-          <dl className="grid grid-cols-3 gap-3 pt-6 text-center">
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-[#aba294]">Rating*</dt>
-              <dd className="mt-2 text-xl font-black text-white">{businessInfo.ratingSnapshot.rating}</dd>
-            </div>
-            <div className="border-x border-white/10">
-              <dt className="text-xs uppercase tracking-wider text-[#aba294]">Price</dt>
-              <dd className="mt-2 text-xl font-black text-white">{businessInfo.priceRange}</dd>
-            </div>
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-[#aba294]">Lunch</dt>
-              <dd className="mt-2 text-xl font-black text-white">3pm</dd>
+          <dl className="pt-6 text-center">
+            <div className="rounded-xl border border-white/10 bg-[#0b0d0c] px-5 py-5">
+              <dt className="text-xs font-bold uppercase tracking-[0.2em] text-[#aba294]">Google review score</dt>
+              <dd className="mt-3 text-4xl font-black text-white">
+                {businessInfo.ratingSnapshot.rating}
+                <span className="ml-2 text-xl text-[#efcb9c]" aria-hidden="true">★</span>
+              </dd>
+              <dd className="mt-2 text-sm text-[#c7beaf]">
+                Based on {businessInfo.ratingSnapshot.reviewCount} reviews*
+              </dd>
             </div>
           </dl>
           <p className="mt-5 text-center text-xs text-[#958c80]">

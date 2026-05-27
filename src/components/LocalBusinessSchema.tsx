@@ -8,7 +8,6 @@ export function LocalBusinessSchema() {
     name: businessInfo.name,
     description: businessInfo.description,
     telephone: businessInfo.phone.international,
-    priceRange: businessInfo.priceRange,
     url: siteConfig.url,
     hasMap: businessInfo.maps.directionsUrl,
     address: {

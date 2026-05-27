@@ -46,5 +46,4 @@ export interface BusinessInfo {
     reviewCount: number;
     source: string;
   };
-  priceRange: string;
 }

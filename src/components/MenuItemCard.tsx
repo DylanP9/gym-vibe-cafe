@@ -1,4 +1,5 @@
 import { MacroBadge } from "@/components/MacroBadge";
+import { MenuPhotoSlot } from "@/components/MenuPhotoSlot";
 import { PriceLabel } from "@/components/PriceLabel";
 import type { MenuItem } from "@/types/menu";
 
@@ -9,7 +10,8 @@ interface MenuItemCardProps {
 export function MenuItemCard({ item }: MenuItemCardProps) {
   return (
     <article className="menu-tile h-full">
-      <div className="flex items-start justify-between gap-4">
+      <MenuPhotoSlot image={item.image} itemName={item.name} />
+      <div className="mt-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="text-base font-bold leading-6 text-[#faf6ee]">{item.name}</h3>
           <div className="mt-2 flex flex-wrap gap-2">

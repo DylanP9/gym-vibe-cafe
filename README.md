@@ -18,7 +18,6 @@ All published business content should continue to be checked against the supplie
 | Phone link | `tel:+441412860559` |
 | Instagram | [@gymvibecafe](https://www.instagram.com/gymvibecafe/) |
 | Tagline | Eat Good. Feel Better. Fuel Your Vibe. |
-| Price range snapshot | £1–10 |
 | Google rating snapshot | 4.9 stars from 121 reviews |
 | Breakfast and lunch | Available until 3pm |
 | Directions | [Google Maps directions link](https://www.google.com/maps/search/?api=1&query=Gym%20Vibe%20Caf%C3%A9%2089%20Middlesex%20St%20Kinning%20Park%20Glasgow%20G41%201EE) |
@@ -121,6 +120,7 @@ Only add the Search Console verification value after it is supplied by the autho
 - Added supplied logo, menu-board reference artwork and meal-prep reference artwork with fixed dimensions and meaningful labelling.
 - Added a concise homepage menu preview fed from the central in-store menu data.
 - Added an app-style `/menu` browser with desktop category navigation, mobile tabs, price variants, add-ons and supplied macro displays.
+- Added menu-card photo slots that remain neutral placeholders until genuine approved food photos are supplied.
 - Added cautious meal-prep information without ordering, payment or availability promises.
 - Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
 - Added structured spaces for future genuine gallery photography without inserting fake images.
@@ -143,6 +143,7 @@ The website-readable menu lives in `src/data/menu.ts`, with its shared data mode
 - To identify a vegetarian choice, set `isVegetarian: true`.
 - To show an unavailable item, set `isUnavailable: true` only after confirmation.
 - To flag a detail requiring confirmation, set `needsVerification: true`.
+- To add a genuine menu photo, save an approved optimised image under `public/images/menu/food/` and add its `src`, `alt`, `width` and `height` in the item's `image` value in `src/data/menu.ts`.
 - Build-your-own options, drinks variants and extras are informational displays only; they do not create online customisation or ordering.
 - Current website prices are based on supplied in-store menu-board information. Delivery-platform prices may differ and must not be copied into the in-store menu without confirmation.
 

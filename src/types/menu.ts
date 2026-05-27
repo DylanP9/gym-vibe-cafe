@@ -10,6 +10,13 @@ export type MenuAddOn = {
   price: string;
 };
 
+export type MenuItemImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type MenuOptionGroup = {
   title: string;
   options: string[];
@@ -27,6 +34,7 @@ export type MenuItem = {
   isVegetarian?: boolean;
   isUnavailable?: boolean;
   needsVerification?: boolean;
+  image?: MenuItemImage;
   macros?: MenuMacroInfo;
   options?: string[];
   addOns?: MenuAddOn[];

@@ -41,5 +41,4 @@ export const businessInfo: BusinessInfo = {
     reviewCount: 121,
     source: "Google rating snapshot",
   },
-  priceRange: "\u00a31\u201310",
 };
