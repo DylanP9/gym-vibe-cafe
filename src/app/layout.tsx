@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { SkipLink } from "@/components/SkipLink";
 import { siteAssets } from "@/data/siteAssets";
@@ -49,6 +50,7 @@ export default function RootLayout({
         <SkipLink />
         <LocalBusinessSchema />
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -15,6 +15,7 @@ Safe improvements completed following this audit:
 - Prepared LocalBusiness menu URL output only when a real configured site URL exists.
 - Strengthened visit conversion paths with a Call Now action in the location panel and a Menu link beside the Instagram CTA.
 - Tightened meal-prep wording to cover changing options, prices and availability.
+- Added privacy-friendly Vercel Web Analytics for anonymous page-view reporting; custom conversion event tracking remains deferred pending an agreed privacy approach.
 
 ## Audit Basis
 
@@ -147,7 +148,7 @@ Google's own Business Profile guidance prioritises complete accurate information
 
 ### Current Strengths
 
-- The site is statically generated and uses no map embed, Instagram embed, live reviews feed or analytics scripts.
+- The site is statically generated and uses no map embed, Instagram embed or live reviews feed. It now uses Vercel Web Analytics for lightweight anonymous page-view reporting.
 - Existing supplied imagery is very small in file size, with known dimensions supplied to `next/image`.
 - Layout shift is limited because image dimensions are specified and placeholder menu images use a fixed aspect ratio.
 - System fonts avoid additional font-network requests.
@@ -179,7 +180,7 @@ Google's own Business Profile guidance prioritises complete accurate information
 | Goal | Current Position | Recommended Improvement | Priority |
 | --- | --- | --- | --- |
 | More menu views | Strong homepage/menu links | Once real photos arrive, feature 3–4 signature dishes above the menu link and keep the full menu fast | High |
-| More calls | Persistent mobile Call action | Add click tracking only after analytics and consent decisions; test phone action on real mobile | Medium |
+| More calls | Persistent mobile Call action | Test phone action on real mobile; add custom click-event tracking only after a confirmed privacy approach | Medium |
 | More directions clicks | Visible hero/location/sticky directions CTA | Add approved Google Business Profile link later and verify directions URL on devices | High owner action |
 | More Instagram visits | Clear CTA without heavy embed | Coordinate site imagery and weekly Instagram posts; use real updates rather than feed embedding | Medium |
 | More in-store visits | Strong location/hours pages | Add genuine exterior/interior imagery and verified Google reviews CTA when supplied | High |
@@ -307,7 +308,7 @@ The following information or assets are still needed from the café owner:
 - Official Google reviews/request link, if a review CTA is desired.
 - Official public website domain.
 - Search Console ownership/verification value.
-- Analytics provider choice and cookie/consent approach, if measurement is wanted.
+- Approved public privacy wording and the consent approach for any future custom event or marketing tracking.
 - Permission to use every photograph, logo and menu/meal-prep artwork asset.
 - Decision on whether the supplied `£1–10` snapshot should remain omitted from the public site.
 - Maintenance decision for the visible rating snapshot.
@@ -337,7 +338,7 @@ The following information or assets are still needed from the café owner:
 4. Add approved social sharing imagery and favicon set.
 5. Validate LocalBusiness structured data; add fully qualified menu URL once live.
 6. Run mobile QA, keyboard/screen-reader QA, contrast testing, link testing and performance testing.
-7. Add analytics only if an account and consent/cookie approach are approved.
+7. Confirm basic Vercel Web Analytics reporting in production, add public privacy wording and only consider custom-event tracking after the privacy approach is approved.
 
 ### Post-Launch Growth Tasks
 
@@ -346,7 +347,7 @@ The following information or assets are still needed from the café owner:
 - Ask for honest reviews using the approved Google link and a physical QR prompt.
 - Place a website/menu QR code at the counter and on printed materials.
 - Update website content monthly when real menu or seasonal changes occur.
-- Review Search Console/approved analytics monthly once configured.
+- Review Search Console and anonymous Vercel Web Analytics monthly once the domain and deployment are configured.
 - Run seasonal promotions only with confirmed availability, pricing and terms.
 
 ## 11. Suggested Code Changes

@@ -12,7 +12,7 @@ The current website audit and practical growth plan is available here:
 
 - [Website Audit and Growth Plan](docs/website-audit-and-growth-plan.md)
 
-Current status: the project has a premium homepage, an app-style browse-only `/menu` experience, verified-location and meal-prep information pages, real call/directions/Instagram actions, and menu-card image slots prepared for genuine approved food photography.
+Current status: the project has a premium homepage, an app-style browse-only `/menu` experience, verified-location and meal-prep information pages, real call/directions/Instagram actions, menu-card image slots prepared for genuine approved food photography, and privacy-friendly Vercel Web Analytics for anonymous page-view reporting.
 
 ### Immediate Next Tasks
 
@@ -140,6 +140,7 @@ Only add the Search Console verification value after it is supplied by the autho
 - Added shareable menu category links and a complete text-only menu reference sourced from central menu data.
 - Improved temporary menu-photo accessibility and prepared responsive sizing for future genuine images.
 - Refined page titles, local conversion links and domain-safe menu structured-data support.
+- Added privacy-friendly Vercel Web Analytics for anonymous visitor and page-view reporting without custom marketing events.
 - Added cautious meal-prep information without ordering, payment or availability promises.
 - Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
 - Added structured spaces for future genuine gallery photography without inserting fake images.
@@ -180,8 +181,8 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 - Finalise canonical URLs only after the real domain is configured.
 - Add `sitemap.ts` and `robots.ts` once the real public domain is known.
 - Add the real Google Search Console verification value once supplied.
-- Choose an analytics provider and implement tracking only after the consent approach is decided.
-- Track call, directions, Instagram, menu-view and any future approved external-order link clicks only after analytics approval.
+- Add a public privacy notice explaining anonymous Vercel Web Analytics before wider promotion of the site.
+- Decide the privacy/consent approach before adding custom tracking for call, directions, Instagram, menu-view or any future approved external-order link clicks.
 - Replace gallery-ready cards with approved genuine food, drinks, interior and exterior photography.
 - Create a branded social preview image after approved visual assets are available.
 - Replace or verify the current logo-based favicon setup with approved favicon files.
@@ -194,14 +195,14 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 - Complete keyboard and screen-reader accessibility QA.
 - Complete performance and image-quality QA after final imagery is supplied.
 
-### Analytics Later
+### Analytics And Privacy
 
-Analytics has intentionally not been configured. If measurement is approved later:
+Basic Vercel Web Analytics is configured for anonymous visitor and page-view reporting. Vercel documents that its Web Analytics product does not use cookies by default and identifies visitors using an anonymised daily hash.
 
-- Choose a real analytics provider and obtain the correct account/property details.
-- Decide the cookie and consent approach before loading tracking scripts.
-- After approval, measure menu views and clicks on Call, Directions and Instagram actions.
-- Do not add analytics identifiers or tracking scripts until those decisions are supplied.
+- Enable Web Analytics in the Vercel dashboard and deploy the updated site to begin receiving page-view data.
+- Add clear public privacy wording before actively marketing the site.
+- Do not add custom click tracking, advertising pixels or additional marketing trackers until the consent/privacy approach is confirmed.
+- If custom tracking is approved later, prioritise menu views and clicks on Call, Directions and Instagram actions.
 
 ## Remaining Business / Owner Tasks
 
@@ -261,7 +262,7 @@ Analytics has intentionally not been configured. If measurement is approved late
 - Verify the production deployment and official domain.
 - Submit a sitemap only after the real domain is live.
 - Add Google Search Console only after the real domain is live.
-- Connect analytics only after an approved consent approach is chosen.
+- Confirm Vercel Web Analytics is receiving anonymous page views after deployment and publish suitable privacy wording.
 
 ## Post-Launch Growth Checklist
 
