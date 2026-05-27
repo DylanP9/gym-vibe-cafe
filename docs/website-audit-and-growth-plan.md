@@ -16,6 +16,7 @@ Safe improvements completed following this audit:
 - Strengthened visit conversion paths with a Call Now action in the location panel and a Menu link beside the Instagram CTA.
 - Tightened meal-prep wording to cover changing options, prices and availability.
 - Added privacy-friendly Vercel Web Analytics for anonymous page-view reporting; custom conversion event tracking remains deferred pending an agreed privacy approach.
+- Added a public privacy notice route and a global footer link explaining the analytics and external-service position.
 
 ## Audit Basis
 
@@ -308,7 +309,7 @@ The following information or assets are still needed from the café owner:
 - Official Google reviews/request link, if a review CTA is desired.
 - Official public website domain.
 - Search Console ownership/verification value.
-- Approved public privacy wording and the consent approach for any future custom event or marketing tracking.
+- Approval of any future changes to privacy wording and the consent approach for any future custom event or marketing tracking.
 - Permission to use every photograph, logo and menu/meal-prep artwork asset.
 - Decision on whether the supplied `£1–10` snapshot should remain omitted from the public site.
 - Maintenance decision for the visible rating snapshot.
@@ -338,7 +339,7 @@ The following information or assets are still needed from the café owner:
 4. Add approved social sharing imagery and favicon set.
 5. Validate LocalBusiness structured data; add fully qualified menu URL once live.
 6. Run mobile QA, keyboard/screen-reader QA, contrast testing, link testing and performance testing.
-7. Confirm basic Vercel Web Analytics reporting in production, add public privacy wording and only consider custom-event tracking after the privacy approach is approved.
+7. Confirm basic Vercel Web Analytics reporting in production, keep the published privacy notice accurate and only consider custom-event tracking after the privacy approach is approved.
 
 ### Post-Launch Growth Tasks
 

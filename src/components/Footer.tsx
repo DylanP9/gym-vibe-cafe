@@ -41,6 +41,9 @@ export function Footer() {
           >
             Instagram
           </a>
+          <Link href="/privacy" className="hover:text-white">
+            Privacy
+          </Link>
         </nav>
       </div>
       <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs text-[#928a7e]">

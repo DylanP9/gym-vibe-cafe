@@ -64,6 +64,7 @@ Correcting inaccurate external directory or map listings is a business-owner tas
 | `/menu` | App-style in-store menu browser with selectable categories, prices, macros and visit actions |
 | `/location` | Verified location, directions, phone details and supplied opening hours |
 | `/meal-prep` | Cautious information page directing visitors to confirm current availability with the café |
+| `/privacy` | Public privacy notice explaining anonymous Vercel Web Analytics and external link use |
 
 ## Local Development
 
@@ -141,6 +142,7 @@ Only add the Search Console verification value after it is supplied by the autho
 - Improved temporary menu-photo accessibility and prepared responsive sizing for future genuine images.
 - Refined page titles, local conversion links and domain-safe menu structured-data support.
 - Added privacy-friendly Vercel Web Analytics for anonymous visitor and page-view reporting without custom marketing events.
+- Added a public `/privacy` notice and a footer link available from every page.
 - Added cautious meal-prep information without ordering, payment or availability promises.
 - Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
 - Added structured spaces for future genuine gallery photography without inserting fake images.
@@ -181,7 +183,6 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 - Finalise canonical URLs only after the real domain is configured.
 - Add `sitemap.ts` and `robots.ts` once the real public domain is known.
 - Add the real Google Search Console verification value once supplied.
-- Add a public privacy notice explaining anonymous Vercel Web Analytics before wider promotion of the site.
 - Decide the privacy/consent approach before adding custom tracking for call, directions, Instagram, menu-view or any future approved external-order link clicks.
 - Replace gallery-ready cards with approved genuine food, drinks, interior and exterior photography.
 - Create a branded social preview image after approved visual assets are available.
@@ -200,7 +201,7 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 Basic Vercel Web Analytics is configured for anonymous visitor and page-view reporting. Vercel documents that its Web Analytics product does not use cookies by default and identifies visitors using an anonymised daily hash.
 
 - Enable Web Analytics in the Vercel dashboard and deploy the updated site to begin receiving page-view data.
-- Add clear public privacy wording before actively marketing the site.
+- Keep the public privacy notice current if analytics or external services change.
 - Do not add custom click tracking, advertising pixels or additional marketing trackers until the consent/privacy approach is confirmed.
 - If custom tracking is approved later, prioritise menu views and clicks on Call, Directions and Instagram actions.
 
@@ -262,7 +263,7 @@ Basic Vercel Web Analytics is configured for anonymous visitor and page-view rep
 - Verify the production deployment and official domain.
 - Submit a sitemap only after the real domain is live.
 - Add Google Search Console only after the real domain is live.
-- Confirm Vercel Web Analytics is receiving anonymous page views after deployment and publish suitable privacy wording.
+- Confirm Vercel Web Analytics is receiving anonymous page views after deployment.
 
 ## Post-Launch Growth Checklist
 
