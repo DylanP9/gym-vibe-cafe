@@ -6,9 +6,9 @@ import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Meal Prep Information",
+  title: "Gym Vibe Café Meal Prep | Ask In Café for Availability",
   description:
-    "See meal-prep information for Gym Vibe Café in Kinning Park. Ask in café for current availability, options, prices and collection details.",
+    "Ask about Gym Vibe Café meal prep in Kinning Park, Glasgow. Current options, prices and availability should be confirmed directly in café.",
   path: "/meal-prep",
 });
 

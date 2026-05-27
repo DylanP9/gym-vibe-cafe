@@ -6,6 +6,21 @@ Gym Vibe Café is a premium, mobile-first local business website for a café in 
 
 The website is informational only. It deliberately does not process orders, payments, bookings, customer accounts or any administrative function.
 
+## Audit And Current Status
+
+The current website audit and practical growth plan is available here:
+
+- [Website Audit and Growth Plan](docs/website-audit-and-growth-plan.md)
+
+Current status: the project has a premium homepage, an app-style browse-only `/menu` experience, verified-location and meal-prep information pages, real call/directions/Instagram actions, and menu-card image slots prepared for genuine approved food photography.
+
+### Immediate Next Tasks
+
+- Check the crawlable text-only menu reference and category sharing behaviour on real mobile devices.
+- Supply approved real photography for key dishes, café exterior/interior and drinks.
+- Confirm the official domain so canonical URL, sitemap, robots and Search Console launch work can be completed.
+- Supply official Google Business Profile and Google reviews links if those actions should be shown on the site.
+
 ## Current Verified Business Information
 
 All published business content should continue to be checked against the supplied approved information below:
@@ -18,6 +33,7 @@ All published business content should continue to be checked against the supplie
 | Phone link | `tel:+441412860559` |
 | Instagram | [@gymvibecafe](https://www.instagram.com/gymvibecafe/) |
 | Tagline | Eat Good. Feel Better. Fuel Your Vibe. |
+| Price range snapshot | £1–10 supplied; intentionally not displayed in the current customer-facing design |
 | Google rating snapshot | 4.9 stars from 121 reviews |
 | Breakfast and lunch | Available until 3pm |
 | Directions | [Google Maps directions link](https://www.google.com/maps/search/?api=1&query=Gym%20Vibe%20Caf%C3%A9%2089%20Middlesex%20St%20Kinning%20Park%20Glasgow%20G41%201EE) |
@@ -121,6 +137,9 @@ Only add the Search Console verification value after it is supplied by the autho
 - Added a concise homepage menu preview fed from the central in-store menu data.
 - Added an app-style `/menu` browser with desktop category navigation, mobile tabs, price variants, add-ons and supplied macro displays.
 - Added menu-card photo slots that remain neutral placeholders until genuine approved food photos are supplied.
+- Added shareable menu category links and a complete text-only menu reference sourced from central menu data.
+- Improved temporary menu-photo accessibility and prepared responsive sizing for future genuine images.
+- Refined page titles, local conversion links and domain-safe menu structured-data support.
 - Added cautious meal-prep information without ordering, payment or availability promises.
 - Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
 - Added structured spaces for future genuine gallery photography without inserting fake images.
@@ -149,6 +168,12 @@ The website-readable menu lives in `src/data/menu.ts`, with its shared data mode
 
 Before launch, confirm all prices, smoothie prices, coffee prices, published high-protein macros and whether any items are currently unavailable. Approved delivery or collection links can be supplied later only if those external actions are wanted.
 
+### Replacing Gallery Placeholders
+
+- Replace homepage gallery placeholders only with approved genuine café photography.
+- Prioritise a front/exterior image, interior image, signature food, smoothies/drinks and brand/menu-board detail.
+- Add optimised files under `public/images/` and update the relevant component or central asset data with accurate alt text and image dimensions.
+
 ## Remaining Code Tasks
 
 - Set `NEXT_PUBLIC_SITE_URL` once the official production domain is approved.
@@ -168,6 +193,15 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 - Complete mobile device QA on real phones.
 - Complete keyboard and screen-reader accessibility QA.
 - Complete performance and image-quality QA after final imagery is supplied.
+
+### Analytics Later
+
+Analytics has intentionally not been configured. If measurement is approved later:
+
+- Choose a real analytics provider and obtain the correct account/property details.
+- Decide the cookie and consent approach before loading tracking scripts.
+- After approval, measure menu views and clicks on Call, Directions and Instagram actions.
+- Do not add analytics identifiers or tracking scripts until those decisions are supplied.
 
 ## Remaining Business / Owner Tasks
 
@@ -228,6 +262,15 @@ Before launch, confirm all prices, smoothie prices, coffee prices, published hig
 - Submit a sitemap only after the real domain is live.
 - Add Google Search Console only after the real domain is live.
 - Connect analytics only after an approved consent approach is chosen.
+
+## Post-Launch Growth Checklist
+
+- Keep the Google Business Profile address, phone, hours, menu link and photos current.
+- Publish regular genuine Instagram updates that link visitors back to the menu or location page.
+- Ask satisfied customers for honest reviews using an approved Google reviews link and QR code.
+- Place a menu/website QR code at the café counter or on approved printed material.
+- Review menu, hours and seasonal content monthly.
+- Review Search Console and approved analytics performance monthly once configured.
 
 ## Future Enhancements
 

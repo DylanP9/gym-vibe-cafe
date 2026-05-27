@@ -10,7 +10,7 @@ interface MenuItemCardProps {
 export function MenuItemCard({ item }: MenuItemCardProps) {
   return (
     <article className="menu-tile h-full">
-      <MenuPhotoSlot image={item.image} itemName={item.name} />
+      <MenuPhotoSlot image={item.image} />
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="text-base font-bold leading-6 text-[#faf6ee]">{item.name}</h3>

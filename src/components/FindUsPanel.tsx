@@ -40,6 +40,9 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
             <ActionLink href={businessInfo.maps.directionsUrl} target="_blank" rel="noopener noreferrer">
               Get directions
             </ActionLink>
+            <ActionLink href={businessInfo.phone.href} variant="secondary">
+              Call now
+            </ActionLink>
             <ActionLink href={businessInfo.instagram.url} target="_blank" rel="noopener noreferrer" variant="secondary">
               Instagram
             </ActionLink>

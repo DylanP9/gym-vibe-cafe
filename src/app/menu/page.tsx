@@ -1,5 +1,6 @@
 import { ActionLink } from "@/components/ActionLink";
 import { Footer } from "@/components/Footer";
+import { FullMenuTextReference } from "@/components/FullMenuTextReference";
 import { Header } from "@/components/Header";
 import { MenuBrowser } from "@/components/MenuBrowser";
 import { PageIntro } from "@/components/PageIntro";
@@ -8,7 +9,7 @@ import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Menu | Breakfast, Meals & Smoothies",
+  title: "Gym Vibe Café Menu | Breakfast, High-Protein Meals & Smoothies",
   description:
     "Browse the Gym Vibe Café in-store menu in Kinning Park, Glasgow, including breakfast, high-protein mains, smoothies, coffee and desserts.",
   path: "/menu",
@@ -39,6 +40,7 @@ export default function MenuPage() {
           smoothies, coffee and desserts with clear in-store menu-board prices.
         </PageIntro>
         <MenuBrowser />
+        <FullMenuTextReference />
       </main>
       <Footer />
       <StickyMobileActionBar />

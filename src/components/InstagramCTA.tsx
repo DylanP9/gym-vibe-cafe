@@ -13,11 +13,16 @@ export function InstagramCTA() {
             Follow {businessInfo.instagram.handle}
           </h2>
           <p className="mt-5 max-w-lg text-base leading-7 text-[#d2cabd]">
-            Follow the café on Instagram for updates and menu news.
+            Follow the café on Instagram for current updates and menu news, then browse the website menu before your visit.
           </p>
-          <ActionLink href={businessInfo.instagram.url} target="_blank" rel="noopener noreferrer" className="mt-8">
-            Follow Instagram
-          </ActionLink>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ActionLink href={businessInfo.instagram.url} target="_blank" rel="noopener noreferrer">
+              Follow Instagram
+            </ActionLink>
+            <ActionLink href="/menu" variant="secondary">
+              View menu
+            </ActionLink>
+          </div>
         </div>
       </div>
     </section>

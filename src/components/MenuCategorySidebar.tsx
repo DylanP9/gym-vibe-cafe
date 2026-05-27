@@ -17,9 +17,12 @@ export function MenuCategorySidebar({ categories, selectedId, onSelect }: MenuCa
 
             return (
               <li key={category.id}>
-                <button
-                  type="button"
-                  onClick={() => onSelect(category.id)}
+                <a
+                  href={`/menu#menu-panel-${category.id}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    onSelect(category.id);
+                  }}
                   aria-current={selected ? "true" : undefined}
                   className={`flex w-full items-center justify-between gap-3 rounded-xl px-3 py-3 text-left text-sm transition ${
                     selected
@@ -29,7 +32,7 @@ export function MenuCategorySidebar({ categories, selectedId, onSelect }: MenuCa
                 >
                   <span>{category.title}</span>
                   <span className={`text-xs ${selected ? "text-white" : "text-[#897f73]"}`}>{category.items.length}</span>
-                </button>
+                </a>
               </li>
             );
           })}

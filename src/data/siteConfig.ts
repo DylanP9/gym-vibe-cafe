@@ -4,7 +4,7 @@ const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 
 export const siteConfig = {
   name: "Gym Vibe Café",
-  defaultTitle: "Gym Vibe Café Glasgow | Breakfast, High-Protein Meals & Smoothies",
+  defaultTitle: "Gym Vibe Café Glasgow | High-Protein Meals, Breakfast & Smoothies",
   description:
     "Visit Gym Vibe Café in Kinning Park, Glasgow for Scottish café favourites, high-protein meals, smoothies and coffee. View the menu, hours and directions.",
   url: configuredUrl || undefined,
@@ -31,7 +31,7 @@ export function buildPageMetadata({
   path,
 }: PageMetadataOptions): Metadata {
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: siteConfig.url ? { canonical: path } : undefined,
     openGraph: {

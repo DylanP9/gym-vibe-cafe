@@ -1,4 +1,4 @@
-import { useRef, type KeyboardEvent } from "react";
+import { useRef, type KeyboardEvent, type MouseEvent } from "react";
 import type { MenuCategory } from "@/types/menu";
 
 interface MenuCategoryTabsProps {
@@ -8,9 +8,9 @@ interface MenuCategoryTabsProps {
 }
 
 export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCategoryTabsProps) {
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const tabRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
-  function moveSelection(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+  function moveSelection(event: KeyboardEvent<HTMLAnchorElement>, index: number) {
     const lastIndex = categories.length - 1;
     let nextIndex: number | null = null;
 
@@ -26,6 +26,11 @@ export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCateg
     }
   }
 
+  function chooseCategory(event: MouseEvent<HTMLAnchorElement>, id: string) {
+    event.preventDefault();
+    onSelect(id);
+  }
+
   return (
     <div className="sticky top-[4.45rem] z-20 -mx-4 mb-6 border-y border-white/10 bg-[#0d0d0b]/95 px-4 py-3 backdrop-blur lg:hidden">
       <div className="flex snap-x gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Choose a menu category">
@@ -33,18 +38,18 @@ export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCateg
           const selected = category.id === selectedId;
 
           return (
-            <button
+            <a
               key={category.id}
               id={`menu-tab-${category.id}`}
               ref={(node) => {
                 tabRefs.current[index] = node;
               }}
-              type="button"
+              href={`/menu#menu-panel-${category.id}`}
               role="tab"
               aria-selected={selected}
               aria-controls={`menu-panel-${category.id}`}
               tabIndex={selected ? 0 : -1}
-              onClick={() => onSelect(category.id)}
+              onClick={(event) => chooseCategory(event, category.id)}
               onKeyDown={(event) => moveSelection(event, index)}
               className={`min-h-12 shrink-0 snap-start rounded-full border px-4 py-3 text-sm font-semibold transition ${
                 selected
@@ -54,7 +59,7 @@ export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCateg
             >
               {category.title}
               {selected ? <span className="sr-only">, selected</span> : null}
-            </button>
+            </a>
           );
         })}
       </div>

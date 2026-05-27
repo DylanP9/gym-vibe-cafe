@@ -27,7 +27,7 @@ export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
         </figure>
         <div>
           <SectionHeading id="meal-prep-heading" eyebrow="Meal prep" title="Ask in café for current meal-prep availability.">
-            Options and availability may change. Please check with the café
+            Options, prices and availability may change. Please check with the café
             directly before visiting specifically for meal prep.
           </SectionHeading>
           {detailed ? (

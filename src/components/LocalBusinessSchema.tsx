@@ -9,6 +9,7 @@ export function LocalBusinessSchema() {
     description: businessInfo.description,
     telephone: businessInfo.phone.international,
     url: siteConfig.url,
+    menu: siteConfig.url ? new URL("/menu", siteConfig.url).toString() : undefined,
     hasMap: businessInfo.maps.directionsUrl,
     address: {
       "@type": "PostalAddress",

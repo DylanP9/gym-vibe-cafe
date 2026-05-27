@@ -9,7 +9,7 @@ import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Location & Opening Hours | Kinning Park",
+  title: "Find Gym Vibe Café | Kinning Park, Glasgow",
   description:
     "Find Gym Vibe Café at 89 Middlesex St, Kinning Park, Glasgow G41 1EE. Check opening hours, call the café or open directions.",
   path: "/location",
