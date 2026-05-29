@@ -9,16 +9,21 @@ interface MenuCategoryPanelProps {
 
 export function MenuCategoryPanel({ category, onAddToCart }: MenuCategoryPanelProps) {
   return (
-    <section id={`menu-panel-${category.id}`} role="tabpanel" aria-label={category.title} className="rounded-2xl border border-white/10 bg-[#11100f] p-4 sm:p-6">
+    <section
+      id={`menu-panel-${category.id}`}
+      role="tabpanel"
+      aria-label={category.title}
+      className="rounded-2xl border border-white/10 bg-[#11100f] p-4 shadow-2xl shadow-black/20 sm:p-6"
+    >
       <header className="mb-6 border-b border-white/10 pb-6">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#d14a4b]">Currently viewing</p>
-        <h2 className="text-3xl font-black uppercase tracking-[-0.03em] text-[#faf6ee]">{category.title}</h2>
+        <h2 className="text-3xl font-black uppercase tracking-[-0.03em] text-[#faf6ee] sm:text-4xl">{category.title}</h2>
         {category.description ? <p className="mt-4 max-w-3xl text-sm leading-7 text-[#c7beaf]">{category.description}</p> : null}
         {category.availabilityNote ? <p className="mt-4 inline-flex rounded-full border border-[#a42425]/45 bg-[#211516] px-3 py-2 text-sm font-semibold text-[#f1d8bc]">{category.availabilityNote}</p> : null}
         {category.priceNote ? <p className="mt-4 text-sm font-semibold text-[#efcb9c]">{category.priceNote}</p> : null}
         {category.customerNote ? <p className="mt-4 text-sm leading-6 text-[#d4c9bb]">{category.customerNote}</p> : null}
       </header>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {category.items.map((item) => (
           <MenuItemCard key={item.id} item={item} onAddToCart={onAddToCart} />
         ))}

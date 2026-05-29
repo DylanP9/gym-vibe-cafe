@@ -13,7 +13,7 @@ export function MenuItemCard({ item, onAddToCart }: MenuItemCardProps) {
   const orderableItem = getOrderableMenuItem(item);
 
   return (
-    <article className="menu-tile h-full">
+    <article className="menu-tile flex h-full flex-col">
       <MenuPhotoSlot image={item.image} />
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
@@ -55,14 +55,14 @@ export function MenuItemCard({ item, onAddToCart }: MenuItemCardProps) {
       ) : null}
       {item.macros ? <MacroBadge macros={item.macros} /> : null}
       {onAddToCart ? (
-        <div className="mt-5">
+        <div className="mt-auto pt-5">
           {orderableItem ? (
             <button
               type="button"
               onClick={() => onAddToCart(orderableItem)}
               className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[#ba3032] bg-[#a42425] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:border-[#cc3e40] hover:bg-[#b92c2e]"
             >
-              Add to basket
+              Add to review basket
             </button>
           ) : (
             <p className="rounded-lg border border-white/10 bg-white/[0.035] px-3 py-2 text-xs leading-5 text-[#bcb3a6]">

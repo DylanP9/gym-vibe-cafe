@@ -6,9 +6,9 @@ import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Gym Vibe Café Meal Prep | Ask In Café for Availability",
+  title: "Gym Vibe Cafe Meal Prep | Ask In Cafe for Availability",
   description:
-    "Ask about Gym Vibe Café meal prep in Kinning Park, Glasgow. Current options, prices and availability should be confirmed directly in café.",
+    "Ask about Gym Vibe Cafe meal prep in Kinning Park, Glasgow. Current options, prices and availability should be confirmed directly in cafe.",
   path: "/meal-prep",
 });
 
@@ -22,8 +22,8 @@ export default function MealPrepPage() {
           eyebrow="Information only"
           title="Meal-prep availability"
         >
-          Ask in café for current meal-prep availability. Options, prices and
-          collection details should be confirmed directly with the café.
+          Ask in cafe for current meal-prep availability. Options, prices and
+          collection details should be confirmed directly with the cafe.
         </PageIntro>
         <MealPrepSection detailed />
       </main>

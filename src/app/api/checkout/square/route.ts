@@ -16,6 +16,13 @@ function squareBaseUrl() {
 }
 
 export async function POST(request: Request) {
+  if (process.env.SQUARE_CHECKOUT_ENABLED !== "true") {
+    return NextResponse.json(
+      { error: "Online checkout is being prepared and is not live yet." },
+      { status: 503 },
+    );
+  }
+
   const accessToken = process.env.SQUARE_ACCESS_TOKEN;
   const locationId = process.env.SQUARE_LOCATION_ID;
 

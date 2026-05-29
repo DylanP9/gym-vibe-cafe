@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { ActionLink } from "@/components/ActionLink";
 import type { CartItem } from "@/types/cart";
 import { businessInfo } from "@/data/businessInfo";
+import { siteConfig } from "@/data/siteConfig";
 
 interface CheckoutCartProps {
   items: CartItem[];
@@ -31,7 +33,13 @@ export function CheckoutCart({
     0,
   );
 
+  const checkoutEnabled = siteConfig.squareCheckoutEnabled;
+
   async function checkout() {
+    if (!checkoutEnabled) {
+      throw new Error("Online checkout is being prepared and is not live yet.");
+    }
+
     const response = await fetch("/api/checkout/square", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -55,15 +63,15 @@ export function CheckoutCart({
   return (
     <aside
       className="sticky top-28 rounded-2xl border border-[#a42425]/45 bg-[#11100f] p-4 shadow-2xl shadow-black/25"
-      aria-label="Checkout basket"
+      aria-label="Menu basket and checkout status"
     >
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d14a4b]">
-            Basket
+            Planning basket
           </p>
           <h2 className="mt-2 text-2xl font-black uppercase tracking-[-0.03em] text-[#faf6ee]">
-            Checkout
+            Checkout status
           </h2>
         </div>
         {items.length ? (
@@ -79,6 +87,18 @@ export function CheckoutCart({
 
       {items.length ? (
         <>
+          <div
+            className="mt-5 rounded-xl border border-[#df9b50]/45 bg-[#251a10] p-4 text-sm leading-6 text-[#f1d8bc]"
+            role="status"
+          >
+            <p className="font-bold text-white">
+              Online checkout is being prepared and is not live yet.
+            </p>
+            <p className="mt-2">
+              Use this basket for review only. Please call the cafe or ask in
+              store while online checkout is being finalised.
+            </p>
+          </div>
           <ul className="mt-5 space-y-3">
             {items.map((item) => (
               <li
@@ -132,27 +152,58 @@ export function CheckoutCart({
                 {formatMoney(totalPence)}
               </span>
             </div>
-            <CheckoutButton onCheckout={checkout} />
+            <CheckoutButton
+              enabled={checkoutEnabled}
+              onCheckout={checkout}
+            />
             <p className="mt-3 text-xs leading-5 text-[#a89f93]">
-              Payment is completed securely on Square. Please confirm current
-              availability with {businessInfo.name} if you are ordering close to
-              closing time.
+              Square payment will only be enabled after sandbox testing,
+              business approval and real Square credentials are configured.
             </p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
+              <ActionLink href={businessInfo.phone.href} variant="secondary" className="min-h-11 px-4 py-2 text-xs">
+                Call the cafe
+              </ActionLink>
+              <ActionLink
+                href={businessInfo.maps.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                className="min-h-11 px-4 py-2 text-xs"
+              >
+                Directions
+              </ActionLink>
+            </div>
           </div>
         </>
       ) : (
         <p className="mt-5 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#c9c0b2]">
-          Add menu items to start a Square checkout.
+          Add menu items to review a future basket. Online checkout is not live
+          yet.
         </p>
       )}
     </aside>
   );
 }
 
-function CheckoutButton({ onCheckout }: { onCheckout: () => Promise<void> }) {
+function CheckoutButton({
+  enabled,
+  onCheckout,
+}: {
+  enabled: boolean;
+  onCheckout: () => Promise<void>;
+}) {
   const [status, setStatus] = useCheckoutStatus();
 
   async function handleClick() {
+    if (!enabled) {
+      setStatus({
+        state: "error",
+        message: "Online checkout is being prepared and is not live yet.",
+      });
+      return;
+    }
+
     setStatus({ state: "loading" });
 
     try {
@@ -173,10 +224,15 @@ function CheckoutButton({ onCheckout }: { onCheckout: () => Promise<void> }) {
       <button
         type="button"
         onClick={handleClick}
-        disabled={status.state === "loading"}
-        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#ba3032] bg-[#a42425] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_14px_28px_-14px_rgba(164,36,37,0.85)] transition hover:border-[#cc3e40] hover:bg-[#b92c2e] disabled:cursor-wait disabled:opacity-70"
+        disabled={!enabled || status.state === "loading"}
+        aria-disabled={!enabled}
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.07] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#d9d0c4] transition disabled:cursor-not-allowed disabled:opacity-80 enabled:border-[#ba3032] enabled:bg-[#a42425] enabled:text-white enabled:shadow-[0_14px_28px_-14px_rgba(164,36,37,0.85)] enabled:hover:border-[#cc3e40] enabled:hover:bg-[#b92c2e]"
       >
-        {status.state === "loading" ? "Creating checkout..." : "Checkout with Square"}
+        {status.state === "loading"
+          ? "Creating checkout..."
+          : enabled
+            ? "Checkout with Square"
+            : "Checkout coming soon"}
       </button>
       {status.state === "error" ? (
         <p className="mt-3 rounded-lg border border-[#a42425]/50 bg-[#211516] p-3 text-sm leading-6 text-[#f1d8bc]">

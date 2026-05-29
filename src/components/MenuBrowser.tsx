@@ -133,7 +133,9 @@ export function MenuBrowser() {
             latest information.
           </p>
           <p className="mt-2 font-semibold text-[#efcb9c]">
-            Add available items to your basket and pay securely through Square.
+            Online checkout is being prepared and is not live yet. You can
+            review a basket here, then call or ask in store while checkout is
+            being finalised.
           </p>
         </div>
         <MenuCategoryTabs

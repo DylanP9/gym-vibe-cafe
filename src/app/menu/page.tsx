@@ -9,9 +9,9 @@ import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Gym Vibe Café Menu | Breakfast, High-Protein Meals & Smoothies",
+  title: "Gym Vibe Cafe Menu | Breakfast, High-Protein Meals & Smoothies",
   description:
-    "Browse the Gym Vibe Café in-store menu in Kinning Park, Glasgow, including breakfast, high-protein mains, smoothies, coffee and desserts.",
+    "Browse the Gym Vibe Cafe in-store menu in Kinning Park, Glasgow, including breakfast, high-protein mains, smoothies, coffee and desserts. Online checkout is not live yet.",
   path: "/menu",
 });
 
@@ -22,7 +22,7 @@ export default function MenuPage() {
       <main id="main-content">
         <PageIntro
           current="Menu"
-          eyebrow="Gym Vibe Café menu"
+          eyebrow="Gym Vibe Cafe menu"
           title="Breakfast, mains and smoothies"
           actions={
             <>
@@ -36,8 +36,9 @@ export default function MenuPage() {
             </>
           }
         >
-          Select a category to browse café favourites, high-protein meals,
+          Select a category to browse cafe favourites, high-protein meals,
           smoothies, coffee and desserts with clear in-store menu-board prices.
+          Online checkout is being prepared and is not live yet.
         </PageIntro>
         <MenuBrowser />
         <FullMenuTextReference />

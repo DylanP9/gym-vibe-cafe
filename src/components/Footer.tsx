@@ -47,8 +47,8 @@ export function Footer() {
         </nav>
       </div>
       <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs text-[#928a7e]">
-        {businessInfo.name}. Online payment, when available, is handled securely
-        by Square.
+        {businessInfo.name}. Online checkout is being prepared and is not live
+        yet.
       </p>
     </footer>
   );

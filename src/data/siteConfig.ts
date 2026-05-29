@@ -3,14 +3,16 @@ import type { Metadata } from "next";
 const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 
 export const siteConfig = {
-  name: "Gym Vibe Café",
-  defaultTitle: "Gym Vibe Café Glasgow | High-Protein Meals, Breakfast & Smoothies",
+  name: "Gym Vibe Caf\u00e9",
+  defaultTitle: "Gym Vibe Caf\u00e9 Glasgow | High-Protein Meals, Breakfast & Smoothies",
   description:
-    "Visit Gym Vibe Café in Kinning Park, Glasgow for Scottish café favourites, high-protein meals, smoothies and coffee. View the menu, hours and directions.",
+    "Visit Gym Vibe Caf\u00e9 in Kinning Park, Glasgow for Scottish caf\u00e9 favourites, high-protein meals, smoothies and coffee. View the menu, hours and directions.",
   url: configuredUrl || undefined,
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   googleReviewsUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || undefined,
+  squareCheckoutEnabled:
+    process.env.NEXT_PUBLIC_SQUARE_CHECKOUT_ENABLED === "true",
   navigation: [
     { label: "Home", href: "/" },
     { label: "Menu", href: "/menu" },

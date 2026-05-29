@@ -25,9 +25,9 @@ export const faqs: FAQ[] = [
   },
   {
     id: "online-payments",
-    question: "Does the website take online orders or payments?",
+    question: "Is online checkout live?",
     answer:
-      "If online checkout is available, payment is completed securely through Square. Please contact the cafe directly for current availability or order questions.",
+      "No. Online checkout is being prepared and is not live yet. Please call the cafe or ask in store while checkout is being finalised.",
   },
   {
     id: "updates",

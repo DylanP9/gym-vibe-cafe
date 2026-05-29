@@ -6,9 +6,9 @@ import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Notice | Gym Vibe Café",
+  title: "Privacy Notice | Gym Vibe Cafe",
   description:
-    "Read the Gym Vibe Café website privacy notice, including how anonymous Vercel Web Analytics page-view information is used.",
+    "Read the Gym Vibe Cafe website privacy notice, including analytics, external links and Square checkout readiness.",
   path: "/privacy",
 });
 
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           title="Privacy notice"
         >
           This notice explains the limited information used when you browse the
-          Gym Vibe Café website.
+          Gym Vibe Cafe website.
         </PageIntro>
 
         <section className="section-shell pt-0" aria-labelledby="privacy-details-title">
@@ -41,10 +41,11 @@ export default function PrivacyPage() {
                   <p className="mt-2">
                     This website provides information about {businessInfo.name},
                     including its menu, location, opening hours and contact
-                    details. If online checkout is available, payment is handled
-                    by Square on a Square-hosted checkout page. This website
-                    does not store card details, bookings or customer account
-                    registrations.
+                    details. Online checkout is being prepared and is not live
+                    yet. If Square checkout is activated later, payment will be
+                    handled by Square on a Square-hosted checkout page. This
+                    website does not store card details, bookings or customer
+                    account registrations.
                   </p>
                 </div>
 
@@ -57,7 +58,7 @@ export default function PrivacyPage() {
                     and uses anonymised data for reporting.
                   </p>
                   <p className="mt-2">
-                    This helps the café understand which website pages are useful
+                    This helps the cafe understand which website pages are useful
                     to visitors. The website does not currently use custom
                     advertising tracking or personalised marketing tracking.
                   </p>
@@ -74,9 +75,9 @@ export default function PrivacyPage() {
                 <div>
                   <h3 className="text-lg font-bold text-white">External services</h3>
                   <p className="mt-2">
-                    If you use links on this website to call the café, open Google
-                    Maps directions, visit Instagram or complete a Square
-                    checkout, those services operate under their own privacy
+                    If you use links on this website to call the cafe, open Google
+                    Maps directions, visit Instagram or use Square after checkout
+                    is activated, those services operate under their own privacy
                     terms.
                   </p>
                 </div>
@@ -97,7 +98,7 @@ export default function PrivacyPage() {
                 </div>
 
                 <p className="border-t border-white/10 pt-5 text-xs text-[#928a7e]">
-                  Last updated: 27 May 2026.
+                  Last updated: 29 May 2026.
                 </p>
               </div>
             </div>

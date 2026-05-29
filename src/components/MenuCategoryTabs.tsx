@@ -32,7 +32,7 @@ export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCateg
   }
 
   return (
-    <div className="sticky top-[4.45rem] z-20 -mx-4 mb-6 border-y border-white/10 bg-[#0d0d0b]/95 px-4 py-3 backdrop-blur lg:hidden">
+    <div className="sticky top-[4.45rem] z-20 -mx-4 mb-6 border-y border-white/10 bg-[#0d0d0b]/95 px-4 py-3 shadow-[0_12px_28px_rgba(0,0,0,0.24)] backdrop-blur lg:hidden">
       <div className="flex snap-x gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Choose a menu category">
         {categories.map((category, index) => {
           const selected = category.id === selectedId;
@@ -51,10 +51,10 @@ export function MenuCategoryTabs({ categories, selectedId, onSelect }: MenuCateg
               tabIndex={selected ? 0 : -1}
               onClick={(event) => chooseCategory(event, category.id)}
               onKeyDown={(event) => moveSelection(event, index)}
-              className={`min-h-12 shrink-0 snap-start rounded-full border px-4 py-3 text-sm font-semibold transition ${
+              className={`min-h-12 shrink-0 snap-start rounded-full border px-4 py-3 text-sm font-bold transition ${
                 selected
-                  ? "border-[#c63a3c] bg-[#a42425] text-white"
-                  : "border-white/15 bg-[#171413] text-[#e4daca] hover:border-white/30"
+                  ? "border-[#d94a4c] bg-[#a42425] text-white shadow-[0_12px_24px_-16px_rgba(164,36,37,0.9)]"
+                  : "border-white/15 bg-[#171413] text-[#e4daca] hover:border-white/30 hover:text-white"
               }`}
             >
               {category.title}

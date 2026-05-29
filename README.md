@@ -1,70 +1,42 @@
-# Gym Vibe Café Website
+# Gym Vibe Cafe Website
 
-## Project Overview
+## Current Status
 
-Gym Vibe Café is a premium, mobile-first local business website for a café in Kinning Park, Glasgow. It helps visitors understand the food offering, browse a readable menu, check opening hours, call the café, open verified directions, follow Instagram and cautiously enquire about current meal-prep availability.
+Gym Vibe Cafe is a premium, mobile-first local business website for a cafe in Kinning Park, Glasgow. It helps visitors browse the in-store menu, check opening hours, call the cafe, open verified directions, follow Instagram and ask about meal-prep availability.
 
-The website is primarily customer-facing and can optionally create Square-hosted checkout links from the menu basket. Card details and payment processing are handled by Square, not by this website. It does not manage bookings, customer accounts or administrative functions.
+The website has Square checkout foundations in place, but checkout is intentionally disabled. Customers can review a future planning basket, but they cannot place a real online order or complete payment until Square credentials, sandbox testing and business approval are complete.
 
-## Audit And Current Status
-
-The current website audit and practical growth plan is available here:
-
-- [Website Audit and Growth Plan](docs/website-audit-and-growth-plan.md)
-
-Current status: the project has a premium homepage, an app-style browse-only `/menu` experience, verified-location and meal-prep information pages, real call/directions/Instagram actions, menu-card image slots prepared for genuine approved food photography, and privacy-friendly Vercel Web Analytics for anonymous page-view reporting.
-
-### Immediate Next Tasks
-
-- Check the crawlable text-only menu reference and category sharing behaviour on real mobile devices.
-- Supply approved real photography for key dishes, café exterior/interior and drinks.
-- Confirm the official domain so canonical URL, sitemap, robots and Search Console launch work can be completed.
-- Supply official Google Business Profile and Google reviews links if those actions should be shown on the site.
-
-## Current Verified Business Information
-
-All published business content should continue to be checked against the supplied approved information below:
-
-| Item | Verified supplied value |
-| --- | --- |
-| Name | Gym Vibe Café |
-| Address | 89 Middlesex St, Kinning Park, Glasgow G41 1EE |
-| Phone | 0141 286 0559 |
-| Phone link | `tel:+441412860559` |
-| Instagram | [@gymvibecafe](https://www.instagram.com/gymvibecafe/) |
-| Tagline | Eat Good. Feel Better. Fuel Your Vibe. |
-| Price range snapshot | £1–10 supplied; intentionally not displayed in the current customer-facing design |
-| Google rating snapshot | 4.9 stars from 121 reviews |
-| Breakfast and lunch | Available until 3pm |
-| Directions | [Google Maps directions link](https://www.google.com/maps/search/?api=1&query=Gym%20Vibe%20Caf%C3%A9%2089%20Middlesex%20St%20Kinning%20Park%20Glasgow%20G41%201EE) |
-
-### Supplied Opening Hours
-
-| Day | Hours |
-| --- | --- |
-| Monday | 7:00 am – 4:00 pm |
-| Tuesday | 7:00 am – 4:00 pm |
-| Wednesday | 7:00 am – 4:00 pm |
-| Thursday | 7:00 am – 4:00 pm |
-| Friday | 7:00 am – 4:00 pm |
-| Saturday | Closed |
-| Sunday | 9:00 am – 3:00 pm |
-
-## Public Listing Caution
-
-Public directory listings currently conflict with the supplied project information. Restaurant Guru, Tripadvisor and the older Kafeneio listing at the same address must not be treated as final business truth for this website. Do not change published opening hours, ratings, address or services based only on these listings.
-
-Correcting inaccurate external directory or map listings is a business-owner task outside the website codebase.
-
-## Pages Included
+Current public pages:
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Premium homepage with menu preview, reference artwork, meal-prep information, location, FAQs and Instagram CTA |
-| `/menu` | App-style in-store menu browser with selectable categories, prices, macros and visit actions |
-| `/location` | Verified location, directions, phone details and supplied opening hours |
-| `/meal-prep` | Cautious information page directing visitors to confirm current availability with the café |
-| `/privacy` | Public privacy notice explaining anonymous Vercel Web Analytics and external link use |
+| `/` | Homepage with brand story, menu highlights, location, meal-prep, gallery placeholders, FAQs and Instagram CTA |
+| `/menu` | App-style menu browser with categories, prices, macros, disabled planning basket and complete text menu reference |
+| `/location` | Verified address, phone, directions, Instagram and opening hours |
+| `/meal-prep` | Cautious meal-prep information; no ordering or payment |
+| `/privacy` | Privacy notice for analytics, external links and future Square checkout |
+| `/checkout/success` | Checkout status page kept cautious while checkout is not live |
+
+## What Works Now
+
+- Polished dark/red Gym Vibe Cafe brand presentation.
+- Mobile-first header, navigation and sticky Call / Directions / Instagram action bar.
+- Menu category browser with desktop sidebar and mobile tabs.
+- Menu cards with prices, popular labels, vegetarian labels and macro displays where supplied.
+- Disabled planning basket for future Square checkout review.
+- Square checkout API foundation guarded by activation flags and server credentials.
+- LocalBusiness structured data using verified business facts only.
+- Configurable canonical URLs, sitemap, robots and Search Console verification.
+- Vercel Web Analytics for anonymous page-view reporting.
+
+## What Is Disabled
+
+- Live Square checkout.
+- Card collection on the website.
+- Delivery or collection promises.
+- Meal-prep ordering or payment.
+- Custom click tracking or advertising pixels.
+- Fake reviews, fake ordering links, fake delivery links or invented photos.
 
 ## Local Development
 
@@ -89,215 +61,126 @@ npm run lint
 npm run build
 ```
 
-Preview a completed production build:
+Preview a production build:
 
 ```bash
 npm run start
 ```
 
-## Site Structure
+## Verified Business Information
 
-```text
-public/images/
-  logo/            Supplied brand logo
-  menu/            Supplied menu-board and meal-prep reference artwork
-docs/              Original project requirements
-src/app/           App Router pages, root metadata and global styling
-src/components/    Reusable page sections, navigation and UI components
-src/data/          Business facts, menu data, FAQs, assets and SEO/site config
-src/types/         Shared TypeScript data types
-```
+Keep published business content aligned with the supplied verified information:
 
-### Editing Content Later
+| Item | Verified supplied value |
+| --- | --- |
+| Name | Gym Vibe Cafe |
+| Address | 89 Middlesex St, Kinning Park, Glasgow G41 1EE |
+| Phone | 0141 286 0559 |
+| Phone link | `tel:+441412860559` |
+| Instagram | `@gymvibecafe` |
+| Tagline | Eat Good. Feel Better. Fuel Your Vibe. |
+| Google rating snapshot | 4.9 stars from 121 reviews, supplied May 2026 |
+| Breakfast and lunch | Available until 3pm |
 
-- Update verified contact details, opening hours, Maps URL and Instagram URL in `src/data/businessInfo.ts`.
-- Update menu entries, prices and verification markers in `src/data/menu.ts`.
-- Update safe FAQ answers in `src/data/faqs.ts`.
-- Update media paths and image dimensions in `src/data/siteAssets.ts`.
-- Configure the final site domain and Google verification through `src/data/siteConfig.ts` and the environment values described below.
-- Keep reusable layouts and visual sections in `src/components/`; keep page files in `src/app/` focused on composition.
+Supplied opening hours:
 
-### SEO and Domain Configuration
+| Day | Hours |
+| --- | --- |
+| Monday | 7:00 am - 4:00 pm |
+| Tuesday | 7:00 am - 4:00 pm |
+| Wednesday | 7:00 am - 4:00 pm |
+| Thursday | 7:00 am - 4:00 pm |
+| Friday | 7:00 am - 4:00 pm |
+| Saturday | Closed |
+| Sunday | 9:00 am - 3:00 pm |
 
-No public website domain has been confirmed, so the site does not hard-code a canonical URL. When the official domain is approved, configure:
+## Updating Content
+
+- Business facts, address, phone, hours, Maps URL and Instagram: `src/data/businessInfo.ts`
+- Menu items, prices, macros, popular labels and availability: `src/data/menu.ts`
+- FAQ content: `src/data/faqs.ts`
+- Image paths and dimensions: `src/data/siteAssets.ts`
+- SEO/site config and optional URLs: `src/data/siteConfig.ts`
+- Reusable UI sections: `src/components/`
+
+Only use approved real cafe, food, drink, interior and exterior photography. Do not add stock-style or invented food photos.
+
+## SEO, Domain and Analytics
+
+The site does not hard-code a fake production domain. When the official domain is approved, configure:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://your-confirmed-domain.example
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-real-google-verification-value
+NEXT_PUBLIC_GOOGLE_REVIEWS_URL=your-approved-google-reviews-link
 ```
 
-Only add the Search Console verification value after it is supplied by the authorised account owner.
+After deployment:
 
-### Square Checkout Configuration
+- Validate canonical URLs.
+- Validate `/sitemap.xml`.
+- Validate `/robots.txt`.
+- Validate LocalBusiness structured data.
+- Submit the sitemap in Google Search Console.
+- Confirm Vercel Web Analytics is receiving anonymous page views.
 
-The menu page can create Square-hosted checkout links from the customer's basket. Card details are entered on Square's checkout page, not on this website.
+## Square Checkout Readiness
 
-Required server-side environment values:
+Square checkout is not live. The planning basket is for proposal review and future testing only.
+
+To activate Square later, the owner must approve checkout, supply real sandbox credentials, complete sandbox order testing, confirm operational handling and explicitly enable the checkout flags.
+
+Required server-side values for sandbox testing:
 
 ```bash
+SQUARE_CHECKOUT_ENABLED=true
 SQUARE_ACCESS_TOKEN=your-square-access-token
 SQUARE_LOCATION_ID=your-square-location-id
 SQUARE_ENVIRONMENT=sandbox
 ```
 
-Use `SQUARE_ENVIRONMENT=production` only after the owner has supplied production credentials and completed live test orders. Sandbox requests use Square's sandbox API URL; production requests use Square's production API URL.
-
-Optional public value:
+Required public value to show the live Square checkout button:
 
 ```bash
-NEXT_PUBLIC_GOOGLE_REVIEWS_URL=your-approved-google-reviews-link
+NEXT_PUBLIC_SQUARE_CHECKOUT_ENABLED=true
 ```
 
-## Completed Code Tasks
+Use `SQUARE_ENVIRONMENT=production` only after the owner has supplied production credentials, approved wording and completed live test orders. See `docs/square-checkout-readiness.md` before activating Square.
 
-- Built the Next.js App Router, TypeScript and Tailwind CSS website foundation.
-- Centralised verified business information, menu data, FAQs, asset paths and site configuration.
-- Reworked the homepage into a premium mobile-first layout with stronger branding, CTAs and high-contrast styling.
-- Added accessible mobile navigation and the persistent mobile Call, Directions and Instagram action bar.
-- Added supplied logo, menu-board reference artwork and meal-prep reference artwork with fixed dimensions and meaningful labelling.
-- Added a concise homepage menu preview fed from the central in-store menu data.
-- Added an app-style `/menu` browser with desktop category navigation, mobile tabs, price variants, add-ons and supplied macro displays.
-- Added menu-card photo slots that remain neutral placeholders until genuine approved food photos are supplied.
-- Added shareable menu category links and a complete text-only menu reference sourced from central menu data.
-- Improved temporary menu-photo accessibility and prepared responsive sizing for future genuine images.
-- Refined page titles, local conversion links and domain-safe menu structured-data support.
-- Added privacy-friendly Vercel Web Analytics for anonymous visitor and page-view reporting without custom marketing events.
-- Added a public `/privacy` notice and a footer link available from every page.
-- Added cautious meal-prep information without ordering, payment or availability promises.
-- Added a Find Us panel based solely on supplied address, phone, Instagram and Maps details.
-- Added structured spaces for future genuine gallery photography without inserting fake images.
-- Added safe FAQ content using supplied information only.
-- Added `/menu`, `/location` and `/meal-prep` routes.
-- Added per-page metadata support with optional canonical and Search Console configuration.
-- Improved LocalBusiness JSON-LD without adding review/rating structured data.
-- Added skip navigation, visible focus states, semantic page structure and accessible expandable mobile navigation.
-- Added an Instagram CTA without scripts or a live embed.
-- Organised supplied artwork under `public/images/`.
+## Owner Confirmation Checklist
 
-## Menu Data Maintenance
-
-The website-readable menu lives in `src/data/menu.ts`, with its shared data model in `src/types/menu.ts`. It is the single source used by both the homepage highlights and the full `/menu` browser.
-
-- To update a price, edit the relevant item's `price`, `secondaryPrice` or size `options` entry in `src/data/menu.ts`.
-- To add a category, add a `MenuCategory` object with a unique `id`, title and items to `menuCategories`.
-- To add macro information, provide `calories`, `proteinGrams`, `carbsGrams` and `fatGrams` in an item's `macros` value only when verified.
-- To highlight an item, set `isPopular: true`.
-- To identify a vegetarian choice, set `isVegetarian: true`.
-- To show an unavailable item, set `isUnavailable: true` only after confirmation.
-- To flag a detail requiring confirmation, set `needsVerification: true`.
-- To add a genuine menu photo, save an approved optimised image under `public/images/menu/food/` and add its `src`, `alt`, `width` and `height` in the item's `image` value in `src/data/menu.ts`.
-- Build-your-own options, drinks variants and extras are informational displays only; they do not create online customisation or ordering.
-- Current website prices are based on supplied in-store menu-board information. Delivery-platform prices may differ and must not be copied into the in-store menu without confirmation.
-
-Before launch, confirm all prices, smoothie prices, coffee prices, published high-protein macros and whether any items are currently unavailable. Approved delivery or collection links can be supplied later only if those external actions are wanted.
-
-### Replacing Gallery Placeholders
-
-- Replace homepage gallery placeholders only with approved genuine café photography.
-- Prioritise a front/exterior image, interior image, signature food, smoothies/drinks and brand/menu-board detail.
-- Add optimised files under `public/images/` and update the relevant component or central asset data with accurate alt text and image dimensions.
-
-## Remaining Code Tasks
-
-- Set `NEXT_PUBLIC_SITE_URL` once the official production domain is approved.
-- Finalise canonical URLs only after the real domain is configured.
-- Add `sitemap.ts` and `robots.ts` once the real public domain is known.
-- Add the real Google Search Console verification value once supplied.
-- Decide the privacy/consent approach before adding custom tracking for call, directions, Instagram, menu-view or any future approved external-order link clicks.
-- Replace gallery-ready cards with approved genuine food, drinks, interior and exterior photography.
-- Create a branded social preview image after approved visual assets are available.
-- Replace or verify the current logo-based favicon setup with approved favicon files.
-- Verify page metadata, canonical URLs and social sharing output in production.
-- Add external collection or delivery links only if approved real links are supplied.
-- Consider expanded breadcrumb structured data only if additional real content pages are created.
-- Add automated tests if the site expands beyond the current static content scope.
-- Re-run production build checks before deployment.
-- Complete mobile device QA on real phones.
-- Complete keyboard and screen-reader accessibility QA.
-- Complete performance and image-quality QA after final imagery is supplied.
-
-### Analytics And Privacy
-
-Basic Vercel Web Analytics is configured for anonymous visitor and page-view reporting. Vercel documents that its Web Analytics product does not use cookies by default and identifies visitors using an anonymised daily hash.
-
-- Enable Web Analytics in the Vercel dashboard and deploy the updated site to begin receiving page-view data.
-- Keep the public privacy notice current if analytics or external services change.
-- Do not add custom click tracking, advertising pixels or additional marketing trackers until the consent/privacy approach is confirmed.
-- If custom tracking is approved later, prioritise menu views and clicks on Call, Directions and Instagram actions.
-
-## Remaining Business / Owner Tasks
-
-- Confirm the current opening hours before launch.
-- Confirm all full menu items and prices before launch.
-- Confirm smoothie and coffee prices against current in-store information.
-- Confirm the supplied high-protein macro information can be published.
-- Confirm whether any menu items are currently unavailable.
-- Confirm current meal-prep availability, choices, prices and collection details.
-- Confirm whether any calories or macros may be published from an authoritative source.
-- Supply a high-resolution approved logo, preferably SVG or transparent PNG.
-- Supply genuine approved food photography.
-- Supply an approved café interior photograph.
-- Supply an approved café exterior photograph.
-- Supply a higher-resolution menu-board source image or verified menu document.
-- Supply a higher-resolution meal-prep artwork source if it should remain prominent.
-- Confirm the official website domain.
-- Provide Google Search Console access or the genuine verification value.
-- Supply the official Google Business Profile link.
-- Supply an approved Google reviews link if a reviews CTA is wanted.
-- Supply approved external collection or delivery links if those actions are wanted later.
-- Correct conflicting external directory listings outside this website.
-- Approve final website wording before publication.
-- Confirm permissions for every photograph or brand asset used.
-
-## Out Of Scope
-
-- On-site card collection
-- Custom payment processing
-- Booking
-- Customer accounts
-- Admin dashboard
-- Database
-- Live Instagram feed
-- Live Google reviews feed
-- Review scraping
-- Delivery API integration
+- Confirm current opening hours and holiday-hours process.
+- Confirm all menu items, prices and availability.
+- Confirm smoothie and coffee prices.
+- Confirm published high-protein macros may be used and maintained.
+- Confirm meal-prep availability, prices and wording.
+- Confirm whether online checkout or click-and-collect should go live.
+- Confirm operational handling for any future Square orders.
+- Supply approved real photography and asset permissions.
+- Supply high-resolution logo/favicon assets if available.
+- Confirm official domain.
+- Supply Google Search Console verification.
+- Supply official Google Business Profile and Google reviews links.
+- Approve final wording before launch.
 
 ## Launch Checklist
 
-- Run `npm run lint` and `npm run build`.
-- Test the site on mobile screen sizes and real mobile devices.
-- Test every navigation and CTA link.
-- Test the telephone link on a phone.
-- Test the verified Google Maps directions link.
-- Test the verified Instagram link.
-- Confirm opening hours immediately before launch.
-- Confirm menu items, prices and availability notes.
-- Confirm the displayed address and phone number.
-- Verify metadata in the production deployment.
-- Verify approved favicon files.
-- Validate LocalBusiness structured data.
-- Confirm there are no fake order, payment, booking or review features.
-- Confirm there are no broken links.
-- Verify the production deployment and official domain.
-- Submit a sitemap only after the real domain is live.
-- Add Google Search Console only after the real domain is live.
-- Confirm Vercel Web Analytics is receiving anonymous page views after deployment.
+- Run `npm run lint`.
+- Run `npm run build`.
+- Test desktop and mobile layouts.
+- Test mobile navigation, menu tabs and disabled basket state.
+- Test Call, Directions and Instagram actions.
+- Confirm online checkout is disabled unless Square launch is approved.
+- Confirm no fake payment, delivery, collection or booking promises exist.
+- Confirm address, phone and hours are correct.
+- Verify metadata, sitemap, robots and structured data in production.
+- Submit sitemap after the official domain is live.
 
 ## Post-Launch Growth Checklist
 
-- Keep the Google Business Profile address, phone, hours, menu link and photos current.
-- Publish regular genuine Instagram updates that link visitors back to the menu or location page.
-- Ask satisfied customers for honest reviews using an approved Google reviews link and QR code.
-- Place a menu/website QR code at the café counter or on approved printed material.
+- Keep Google Business Profile address, phone, hours, menu URL and photos current.
+- Publish genuine Instagram updates that point visitors back to `/menu` or `/location`.
+- Ask satisfied customers for honest reviews using an approved Google reviews link.
+- Add a menu QR code at the counter or on approved printed material.
 - Review menu, hours and seasonal content monthly.
-- Review Search Console and approved analytics performance monthly once configured.
-
-## Future Enhancements
-
-- Replace gallery slots with a real café and food gallery.
-- Add approved external ordering or collection links if supplied.
-- Expand menu presentation when a fully verified source menu is supplied.
-- Add a blog or news page only if the café wants to maintain it.
-- Add seasonal offers only when supplied and approved.
-- Perform periodic Google Business Profile and directory consistency checks.
-- Add monthly reporting for approved CTA click tracking.
+- Review Search Console and approved analytics monthly after launch.

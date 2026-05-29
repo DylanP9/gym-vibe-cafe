@@ -19,7 +19,7 @@ export function QuickInfoStrip() {
           <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">
             Mon - Fri: {weekdayHours}
             <br />
-            Sat: {saturdayHours} · Sun: {sundayHours}
+            Sat: {saturdayHours} / Sun: {sundayHours}
           </dd>
         </div>
         <div className="bg-[#111312] p-5">
@@ -27,7 +27,7 @@ export function QuickInfoStrip() {
           <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">{businessInfo.breakfastLunchNote}</dd>
         </div>
         <div className="bg-[#111312] p-5">
-          <dt className="info-label">Call the café</dt>
+          <dt className="info-label">Call the cafe</dt>
           <dd className="mt-2 text-sm leading-6 text-[#f5f0e7]">
             <a href={businessInfo.phone.href} className="font-bold hover:text-[#ee7777]">
               {businessInfo.phone.display}

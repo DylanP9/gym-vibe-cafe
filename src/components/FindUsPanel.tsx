@@ -12,17 +12,22 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
       <div className="content-shell grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
           <SectionHeading id="find-us-heading" eyebrow="Find us" title="Visit us in Kinning Park">
-            On Glasgow Southside, Gym Vibe Café is a convenient stop for
-            visitors looking for breakfast, lunch, coffee, smoothies or
-            high-protein menu choices nearby.
+            On Glasgow Southside, Gym Vibe Cafe gives visitors a clear place to
+            check the menu, opening hours, phone number and directions before
+            heading in.
           </SectionHeading>
-          {showLocationLink ? (
-            <ActionLink href="/location" variant="secondary">
-              View hours and location
+          <div className="flex flex-wrap gap-3">
+            {showLocationLink ? (
+              <ActionLink href="/location" variant="secondary">
+                View hours
+              </ActionLink>
+            ) : null}
+            <ActionLink href={businessInfo.maps.directionsUrl} target="_blank" rel="noopener noreferrer">
+              Directions
             </ActionLink>
-          ) : null}
+          </div>
         </div>
-        <div className="rounded-2xl border border-[#a42425]/45 bg-[#111312] p-6 sm:p-8">
+        <div className="rounded-2xl border border-[#a42425]/45 bg-[#111312] p-6 shadow-2xl shadow-black/20 sm:p-8">
           <p className="text-lg font-black uppercase tracking-wide text-white">
             {businessInfo.name}
           </p>
@@ -33,9 +38,25 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
             <br />
             {businessInfo.address.postcode}
           </address>
-          <a className="mt-4 inline-block font-bold text-[#f5f0e7] hover:text-[#e25b5c]" href={businessInfo.phone.href}>
-            {businessInfo.phone.display}
-          </a>
+          <div className="mt-5 grid gap-3 border-y border-white/10 py-5 text-sm text-[#d9d0c4] sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d14a4b]">Phone</p>
+              <a className="mt-2 inline-block font-bold text-[#f5f0e7] hover:text-[#e25b5c]" href={businessInfo.phone.href}>
+                {businessInfo.phone.display}
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d14a4b]">Updates</p>
+              <a
+                className="mt-2 inline-block font-bold text-[#f5f0e7] hover:text-[#e25b5c]"
+                href={businessInfo.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {businessInfo.instagram.handle}
+              </a>
+            </div>
+          </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <ActionLink href={businessInfo.maps.directionsUrl} target="_blank" rel="noopener noreferrer">
               Get directions

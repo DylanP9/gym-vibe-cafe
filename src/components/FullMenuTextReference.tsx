@@ -2,7 +2,7 @@ import type { MenuCategory, MenuItem } from "@/types/menu";
 import { menuCategories } from "@/data/menu";
 
 function MenuItemLine({ item }: { item: MenuItem }) {
-  const prices = [item.price, item.secondaryPrice, item.priceNote].filter(Boolean).join(" · ");
+  const prices = [item.price, item.secondaryPrice, item.priceNote].filter(Boolean).join(" / ");
 
   return (
     <li className="border-b border-white/[0.07] py-2.5 last:border-b-0">
@@ -14,10 +14,10 @@ function MenuItemLine({ item }: { item: MenuItem }) {
         </span>
         {prices ? <span className="shrink-0 text-right text-[#efcb9c]">{prices}</span> : null}
       </div>
-      {item.options ? <p className="mt-1 text-sm text-[#c8beaf]">{item.options.join(" · ")}</p> : null}
+      {item.options ? <p className="mt-1 text-sm text-[#c8beaf]">{item.options.join(" / ")}</p> : null}
       {item.macros ? (
         <p className="mt-1 text-sm text-[#c8beaf]">
-          {item.macros.calories} kcal · {item.macros.proteinGrams}g protein · {item.macros.carbsGrams}g carbs · {item.macros.fatGrams}g fat
+          {item.macros.calories} kcal / {item.macros.proteinGrams}g protein / {item.macros.carbsGrams}g carbs / {item.macros.fatGrams}g fat
         </p>
       ) : null}
     </li>
@@ -37,7 +37,7 @@ function CategoryReference({ category }: { category: MenuCategory }) {
       </ul>
       {category.addOns ? (
         <p className="mt-3 text-sm text-[#c9c0b2]">
-          Add-ons: {category.addOns.map((addOn) => `${addOn.name} ${addOn.price}`).join(" · ")}
+          Add-ons: {category.addOns.map((addOn) => `${addOn.name} ${addOn.price}`).join(" / ")}
         </p>
       ) : null}
       {category.optionGroups ? category.optionGroups.map((group) => (

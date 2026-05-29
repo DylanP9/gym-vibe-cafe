@@ -5,15 +5,18 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CafeOrCoffeeShop",
+    "@id": siteConfig.url ? new URL("/#local-business", siteConfig.url).toString() : undefined,
     name: businessInfo.name,
     description: businessInfo.description,
     telephone: businessInfo.phone.international,
     url: siteConfig.url,
     menu: siteConfig.url ? new URL("/menu", siteConfig.url).toString() : undefined,
     hasMap: businessInfo.maps.directionsUrl,
+    image: siteConfig.url ? new URL("/images/logo/gym-vibe-cafe-logo.jpeg", siteConfig.url).toString() : undefined,
     address: {
       "@type": "PostalAddress",
       streetAddress: businessInfo.address.street,
+      addressRegion: businessInfo.address.area,
       addressLocality: businessInfo.address.city,
       postalCode: businessInfo.address.postcode,
       addressCountry: "GB",

@@ -7,9 +7,9 @@ import { businessInfo } from "@/data/businessInfo";
 import { buildPageMetadata } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
-  title: "Order Received | Gym Vibe Cafe",
+  title: "Checkout Status | Gym Vibe Cafe",
   description:
-    "Your Square checkout has been completed. Contact Gym Vibe Cafe if you need help with your order.",
+    "Square checkout for Gym Vibe Cafe is being prepared and is not live yet. Contact the cafe for current order questions.",
   path: "/checkout/success",
 });
 
@@ -21,7 +21,7 @@ export default function CheckoutSuccessPage() {
         <PageIntro
           current="Checkout"
           eyebrow="Square checkout"
-          title="Thanks, your checkout is complete"
+          title="Checkout is being prepared"
           actions={
             <>
               <ActionLink href={businessInfo.phone.href}>Call now</ActionLink>
@@ -31,8 +31,8 @@ export default function CheckoutSuccessPage() {
             </>
           }
         >
-          Square has handled the payment step. If you need to change anything or
-          check collection details, please contact the cafe directly.
+          Online checkout is not live yet. Please call the cafe or ask in store
+          while Square checkout is being finalised and tested.
         </PageIntro>
       </main>
       <Footer />
