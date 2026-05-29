@@ -11,6 +11,8 @@ export const siteConfig = {
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   googleReviewsUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || undefined,
+  justEatOrderUrl:
+    "https://www.just-eat.co.uk/restaurants-vibe-cafe-pollokshields/menu",
   squareCheckoutEnabled:
     process.env.NEXT_PUBLIC_SQUARE_CHECKOUT_ENABLED === "true",
   navigation: [

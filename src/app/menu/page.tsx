@@ -6,7 +6,7 @@ import { MenuBrowser } from "@/components/MenuBrowser";
 import { PageIntro } from "@/components/PageIntro";
 import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
 import { businessInfo } from "@/data/businessInfo";
-import { buildPageMetadata } from "@/data/siteConfig";
+import { buildPageMetadata, siteConfig } from "@/data/siteConfig";
 
 export const metadata = buildPageMetadata({
   title: "Gym Vibe Cafe Menu | Breakfast, High-Protein Meals & Smoothies",
@@ -26,19 +26,20 @@ export default function MenuPage() {
           title="Breakfast, mains and smoothies"
           actions={
             <>
-              <ActionLink href={businessInfo.phone.href}>Call now</ActionLink>
+              <ActionLink href={siteConfig.justEatOrderUrl} target="_blank" rel="noopener noreferrer">
+                Order now
+              </ActionLink>
+              <ActionLink href={businessInfo.phone.href} variant="secondary">Call now</ActionLink>
               <ActionLink href={businessInfo.maps.directionsUrl} target="_blank" rel="noopener noreferrer" variant="secondary">
                 Directions
-              </ActionLink>
-              <ActionLink href={businessInfo.instagram.url} target="_blank" rel="noopener noreferrer" variant="secondary">
-                Instagram
               </ActionLink>
             </>
           }
         >
           Select a category to browse cafe favourites, high-protein meals,
           smoothies, coffee and desserts with clear in-store menu-board prices.
-          Online checkout is being prepared and is not live yet.
+          Online orders currently redirect to Just Eat while in-site Square
+          checkout is being prepared.
         </PageIntro>
         <MenuBrowser />
         <FullMenuTextReference />

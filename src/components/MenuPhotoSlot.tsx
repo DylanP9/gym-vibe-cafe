@@ -21,11 +21,13 @@ export function MenuPhotoSlot({ image }: MenuPhotoSlotProps) {
 
   return (
     <div
-      className="flex aspect-[4/3] w-full items-end rounded-lg border border-[#ded8d1] bg-[#faf8f4] p-3"
+      className="relative flex aspect-[4/3] w-full items-end overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(145deg,#f8f4ec,#ebe3d6)] p-3"
       aria-hidden="true"
     >
-      <span className="rounded-full border border-[#ddd5ca] bg-white/90 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-[#6b635b]">
-        Photo coming soon
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(164,36,37,0.14),transparent_28%),linear-gradient(135deg,rgba(9,11,10,0.04),transparent_42%)]" />
+      <div className="absolute right-3 top-3 h-9 w-9 rounded-full border border-[#d8cfc3]" />
+      <span className="relative rounded-full border border-[#ddd5ca] bg-white/92 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-[#6b635b]">
+        Photo space
       </span>
     </div>
   );

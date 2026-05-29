@@ -98,6 +98,14 @@ export function CheckoutCart({
               Use this basket for review only. Please call the cafe or ask in
               store while online checkout is being finalised.
             </p>
+            <a
+              href={siteConfig.justEatOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-10 items-center justify-center rounded-full border border-[#ba3032] bg-[#a42425] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white hover:border-[#cc3e40] hover:bg-[#b92c2e]"
+            >
+              Order now on Just Eat
+            </a>
           </div>
           <ul className="mt-5 space-y-3">
             {items.map((item) => (

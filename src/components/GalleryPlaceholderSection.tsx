@@ -1,11 +1,11 @@
 import { SectionHeading } from "@/components/SectionHeading";
 
 const gallerySlots = [
-  { title: "Signature dishes", detail: "Space reserved for approved real food photography" },
-  { title: "Cafe interior", detail: "Space reserved for an approved interior photo" },
-  { title: "Cafe exterior", detail: "Space reserved for a visitor-facing exterior photo" },
-  { title: "Smoothies & drinks", detail: "Space reserved for real drinks photography" },
-  { title: "Brand details", detail: "Space reserved for counter, logo or menu-board detail" },
+  { title: "Signature dishes", detail: "Approved real food photography" },
+  { title: "Cafe interior", detail: "Approved interior photo" },
+  { title: "Cafe exterior", detail: "Visitor-facing exterior photo" },
+  { title: "Smoothies & drinks", detail: "Real drinks photography" },
+  { title: "Brand details", detail: "Counter, logo or menu-board detail" },
 ];
 
 export function GalleryPlaceholderSection() {
@@ -20,14 +20,18 @@ export function GalleryPlaceholderSection() {
           {gallerySlots.map((slot, index) => (
             <div
               key={slot.title}
-              className="flex min-h-44 flex-col justify-between rounded-xl border border-dashed border-white/18 bg-[linear-gradient(145deg,#171312,#0b0d0c)] p-4 shadow-[0_16px_35px_-32px_rgba(0,0,0,0.8)]"
+              className="relative flex min-h-48 overflow-hidden rounded-xl border border-dashed border-white/18 bg-[linear-gradient(145deg,#171312,#0b0d0c)] p-4 shadow-[0_16px_35px_-32px_rgba(0,0,0,0.8)]"
             >
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-[#a42425]">
-                Slot {index + 1}
-              </span>
-              <div>
-                <p className="font-bold text-[#f4efe6]">{slot.title}</p>
-                <p className="mt-2 text-xs leading-5 text-[#aaa194]">{slot.detail}</p>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_16%,rgba(164,36,37,0.24),transparent_31%)]" />
+              <div className="relative flex w-full flex-col justify-between">
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-[#e25758]">
+                  Slot {index + 1}
+                </span>
+                <div>
+                  <div className="mb-4 h-10 w-10 rounded-full border border-[#a42425]/45 bg-white/[0.035]" />
+                  <p className="font-bold text-[#f4efe6]">{slot.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#aaa194]">{slot.detail}</p>
+                </div>
               </div>
             </div>
           ))}

@@ -21,7 +21,14 @@ export function HeroSection() {
             coffee in Kinning Park, Glasgow.
           </p>
           <div className="mt-9 flex flex-col gap-3 min-[390px]:flex-row min-[390px]:flex-wrap">
-            <ActionLink href="/menu">View menu</ActionLink>
+            <ActionLink
+              href={siteConfig.justEatOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Order now
+            </ActionLink>
+            <ActionLink href="/menu" variant="secondary">View menu</ActionLink>
             <ActionLink
               href={businessInfo.maps.directionsUrl}
               target="_blank"
@@ -54,20 +61,23 @@ export function HeroSection() {
             </div>
             <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d95555]">Online</p>
-              <p className="mt-2 font-semibold text-white">Checkout being prepared</p>
+              <p className="mt-2 font-semibold text-white">Order through Just Eat</p>
             </div>
           </div>
         </div>
-        <div className="rounded-[1.5rem] border border-white/10 bg-[#101211]/90 p-5 shadow-2xl shadow-black/35 sm:p-7">
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#101211]/90 p-5 shadow-2xl shadow-black/35 sm:p-7">
+          <div className="absolute inset-x-0 top-0 h-1 bg-[#a42425]" />
           <div className="flex items-center gap-5 border-b border-white/10 pb-6">
-            <Image
-              src={siteAssets.logo.src}
-              alt={siteAssets.logo.alt}
-              width={siteAssets.logo.width}
-              height={siteAssets.logo.height}
-              className="h-24 w-24 shrink-0 rounded-xl object-cover sm:h-28 sm:w-28"
-              priority
-            />
+            <div className="shrink-0 rounded-2xl border border-[#a42425]/35 bg-[#070908] p-2 shadow-[0_16px_35px_-24px_rgba(164,36,37,0.75)]">
+              <Image
+                src={siteAssets.logo.src}
+                alt={siteAssets.logo.alt}
+                width={siteAssets.logo.width}
+                height={siteAssets.logo.height}
+                className="h-24 w-24 rounded-xl object-cover sm:h-28 sm:w-28"
+                priority
+              />
+            </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d14a4b]">
                 Gym Vibe Cafe

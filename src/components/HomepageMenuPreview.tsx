@@ -2,6 +2,7 @@ import { ActionLink } from "@/components/ActionLink";
 import { MenuItemCard } from "@/components/MenuItemCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { homepageMenuCategories } from "@/data/menu";
+import { siteConfig } from "@/data/siteConfig";
 
 export function HomepageMenuPreview() {
   const popular = homepageMenuCategories.find((category) => category.id === "popular-picks");
@@ -27,7 +28,10 @@ export function HomepageMenuPreview() {
           {featuredMains.map((item) => <MenuItemCard key={item.id} item={item} />)}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ActionLink href="/menu">View full menu</ActionLink>
+          <ActionLink href={siteConfig.justEatOrderUrl} target="_blank" rel="noopener noreferrer">
+            Order now
+          </ActionLink>
+          <ActionLink href="/menu" variant="secondary">View full menu</ActionLink>
           <ActionLink href="/location" variant="secondary">Plan a visit</ActionLink>
         </div>
       </div>

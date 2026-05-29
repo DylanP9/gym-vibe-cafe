@@ -11,16 +11,19 @@ interface MealPrepSectionProps {
 export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
   return (
     <section id="meal-prep" className="section-shell section-divider bg-[#111312]" aria-labelledby="meal-prep-heading">
-      <div className="content-shell grid gap-8 md:grid-cols-[0.75fr_1fr] md:items-center">
-        <figure className="mx-auto w-full max-w-xs rounded-2xl border border-white/10 bg-[#080a09] p-4 shadow-2xl shadow-black/20">
-          <Image
-            src={siteAssets.mealPrepBundleReference.src}
-            alt={siteAssets.mealPrepBundleReference.alt}
-            width={siteAssets.mealPrepBundleReference.width}
-            height={siteAssets.mealPrepBundleReference.height}
-            unoptimized
-            className="mx-auto h-auto w-full max-w-[201px] rounded-lg object-contain"
-          />
+      <div className="content-shell grid gap-8 md:grid-cols-[0.8fr_1fr] md:items-center">
+        <figure className="relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-[#080a09] p-4 shadow-2xl shadow-black/25">
+          <div className="absolute inset-x-0 top-0 h-1 bg-[#a42425]" />
+          <div className="rounded-xl border border-[#a42425]/25 bg-[radial-gradient(circle_at_20%_0%,rgba(164,36,37,0.24),transparent_34%),#0d0f0e] p-5">
+            <Image
+              src={siteAssets.mealPrepBundleReference.src}
+              alt={siteAssets.mealPrepBundleReference.alt}
+              width={siteAssets.mealPrepBundleReference.width}
+              height={siteAssets.mealPrepBundleReference.height}
+              unoptimized
+              className="mx-auto h-auto w-full max-w-[260px] rounded-lg border border-white/10 object-contain shadow-[0_20px_45px_-34px_rgba(0,0,0,0.95)]"
+            />
+          </div>
           <figcaption className="mt-3 text-center text-xs text-[#a79d90]">
             Supplied meal-prep reference artwork
           </figcaption>

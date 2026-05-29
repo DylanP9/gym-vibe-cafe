@@ -4,7 +4,13 @@
 
 Square checkout is not configured and is not live.
 
-The website includes a disabled planning basket and a guarded server API route for future Square-hosted checkout. The public UI tells customers that online checkout is being prepared and asks them to call the cafe or ask in store while checkout is being finalised.
+The website includes a disabled planning basket and a guarded server API route for future Square-hosted checkout. The public UI tells customers that in-site Square checkout is being prepared.
+
+Current live customer ordering is handled externally through the approved Just Eat menu:
+
+```text
+https://www.just-eat.co.uk/restaurants-vibe-cafe-pollokshields/menu
+```
 
 ## Already Built
 
@@ -21,8 +27,8 @@ The website includes a disabled planning basket and a guarded server API route f
 - Live payment.
 - Card collection.
 - Checkout button activation.
-- Delivery promises.
-- Collection promises.
+- In-site delivery promises.
+- In-site collection promises.
 - Meal-prep ordering.
 - Square credential configuration.
 

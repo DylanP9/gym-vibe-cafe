@@ -6,6 +6,12 @@ Gym Vibe Cafe is a premium, mobile-first local business website for a cafe in Ki
 
 The website has Square checkout foundations in place, but checkout is intentionally disabled. Customers can review a future planning basket, but they cannot place a real online order or complete payment until Square credentials, sandbox testing and business approval are complete.
 
+For live external ordering, the customer-facing `Order now` action currently redirects to the approved Just Eat menu:
+
+```text
+https://www.just-eat.co.uk/restaurants-vibe-cafe-pollokshields/menu
+```
+
 Current public pages:
 
 | Route | Purpose |
@@ -24,6 +30,7 @@ Current public pages:
 - Menu category browser with desktop sidebar and mobile tabs.
 - Menu cards with prices, popular labels, vegetarian labels and macro displays where supplied.
 - Disabled planning basket for future Square checkout review.
+- External `Order now` actions that redirect to the approved Just Eat menu.
 - Square checkout API foundation guarded by activation flags and server credentials.
 - LocalBusiness structured data using verified business facts only.
 - Configurable canonical URLs, sitemap, robots and Search Console verification.
@@ -33,7 +40,7 @@ Current public pages:
 
 - Live Square checkout.
 - Card collection on the website.
-- Delivery or collection promises.
+- In-site delivery or collection promises.
 - Meal-prep ordering or payment.
 - Custom click tracking or advertising pixels.
 - Fake reviews, fake ordering links, fake delivery links or invented photos.

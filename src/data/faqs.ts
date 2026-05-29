@@ -27,7 +27,7 @@ export const faqs: FAQ[] = [
     id: "online-payments",
     question: "Is online checkout live?",
     answer:
-      "No. Online checkout is being prepared and is not live yet. Please call the cafe or ask in store while checkout is being finalised.",
+      "Orders currently redirect to Just Eat. The in-site Square checkout is being prepared and is not live yet.",
   },
   {
     id: "updates",

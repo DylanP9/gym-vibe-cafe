@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { businessInfo } from "@/data/businessInfo";
+import { siteAssets } from "@/data/siteAssets";
 import { siteConfig } from "@/data/siteConfig";
 
 export function Footer() {
@@ -47,9 +49,18 @@ export function Footer() {
         </nav>
       </div>
       <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs text-[#928a7e]">
-        {businessInfo.name}. Online checkout is being prepared and is not live
-        yet.
+        {businessInfo.name}. Online checkout is being prepared and is not live yet.
       </p>
+      <div className="content-shell mt-6 flex flex-col gap-3 border-t border-white/10 pb-10 pt-6 text-xs text-[#928a7e] sm:flex-row sm:items-center sm:justify-between sm:pb-0">
+        <p>Created by Lunamar Digital</p>
+        <Image
+          src={siteAssets.lunamarDigitalLogo.src}
+          alt={siteAssets.lunamarDigitalLogo.alt}
+          width={siteAssets.lunamarDigitalLogo.width}
+          height={siteAssets.lunamarDigitalLogo.height}
+          className="h-12 w-auto self-start sm:self-auto"
+        />
+      </div>
     </footer>
   );
 }

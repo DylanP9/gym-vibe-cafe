@@ -10,6 +10,7 @@ Scope: Gym Vibe Cafe website after pre-Square-launch polish pass.
 - Menu browser kept app-style category navigation with stronger selected states on desktop and mobile.
 - Menu cards improved for scanning, popular labels, macros and future basket review.
 - Checkout surface changed from live-sounding checkout to a disabled planning basket.
+- Added prominent Order Now actions that redirect to the approved Just Eat menu while Square remains inactive.
 - Square API route now requires explicit activation before it can create checkout links.
 - Location section improved with clearer address, phone, Instagram and directions presentation.
 - Meal-prep copy made more cautious and confirms meal prep is not connected to ordering.
@@ -31,7 +32,7 @@ Scope: Gym Vibe Cafe website after pre-Square-launch polish pass.
 
 ## Checkout Readiness
 
-Checkout is not live. The planning basket is useful for reviewing a future ordering flow, but customers should call or ask in store while Square checkout is being finalised.
+Square checkout is not live. The planning basket is useful for reviewing a future ordering flow. Live online ordering currently redirects to the approved Just Eat menu.
 
 Before Square can go live:
 

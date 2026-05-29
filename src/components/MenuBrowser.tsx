@@ -6,6 +6,7 @@ import { MenuCategoryPanel } from "@/components/MenuCategoryPanel";
 import { MenuCategorySidebar } from "@/components/MenuCategorySidebar";
 import { MenuCategoryTabs } from "@/components/MenuCategoryTabs";
 import { menuCategories } from "@/data/menu";
+import { siteConfig } from "@/data/siteConfig";
 import type { OrderableMenuItem } from "@/lib/menuPricing";
 import type { CartItem } from "@/types/cart";
 
@@ -133,10 +134,17 @@ export function MenuBrowser() {
             latest information.
           </p>
           <p className="mt-2 font-semibold text-[#efcb9c]">
-            Online checkout is being prepared and is not live yet. You can
-            review a basket here, then call or ask in store while checkout is
-            being finalised.
+            Order now through Just Eat, or review a future in-site basket here
+            while Square checkout is being finalised.
           </p>
+          <a
+            href={siteConfig.justEatOrderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border border-[#ba3032] bg-[#a42425] px-5 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white hover:border-[#cc3e40] hover:bg-[#b92c2e]"
+          >
+            Order now on Just Eat
+          </a>
         </div>
         <MenuCategoryTabs
           categories={menuCategories}

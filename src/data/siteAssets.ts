@@ -17,4 +17,10 @@ export const siteAssets = {
     width: 201,
     height: 190,
   },
+  lunamarDigitalLogo: {
+    src: "/images/logo/lunamar-digital-logo.png",
+    alt: "Lunamar Digital logo",
+    width: 720,
+    height: 174,
+  },
 } as const;

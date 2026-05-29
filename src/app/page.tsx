@@ -1,4 +1,5 @@
 import { FAQSection } from "@/components/FAQSection";
+import { ExternalOrderBand } from "@/components/ExternalOrderBand";
 import { FindUsPanel } from "@/components/FindUsPanel";
 import { Footer } from "@/components/Footer";
 import { GalleryPlaceholderSection } from "@/components/GalleryPlaceholderSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <QuickInfoStrip />
+        <ExternalOrderBand />
         <HomepageMenuPreview />
         <MenuBoardReferencePanel />
         <MealPrepSection />
