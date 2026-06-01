@@ -23,11 +23,11 @@ export default function MenuPage() {
         <PageIntro
           current="Menu"
           eyebrow="Gym Vibe Cafe menu"
-          title="Breakfast, mains and smoothies"
+          title="Breakfast, filled rolls, protein mains and smoothies"
           actions={
             <>
               <ActionLink href={siteConfig.justEatOrderUrl} target="_blank" rel="noopener noreferrer">
-                Order now
+                Just Eat menu
               </ActionLink>
               <ActionLink href={businessInfo.phone.href} variant="secondary">Call now</ActionLink>
               <ActionLink href={businessInfo.maps.directionsUrl} target="_blank" rel="noopener noreferrer" variant="secondary">
@@ -36,10 +36,9 @@ export default function MenuPage() {
             </>
           }
         >
-          Select a category to browse cafe favourites, high-protein meals,
-          smoothies, coffee and desserts with clear in-store menu-board prices.
-          Online orders currently redirect to Just Eat while in-site Square
-          checkout is being prepared.
+          Browse the in-store menu by category, including Scottish breakfasts,
+          filled rolls, high-protein meals, smoothies, coffee and desserts.
+          Square checkout on this website is being prepared and is not live yet.
         </PageIntro>
         <MenuBrowser />
         <FullMenuTextReference />

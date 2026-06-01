@@ -8,7 +8,7 @@ export function OpeningHoursSection() {
         <SectionHeading id="hours-heading" eyebrow="Plan your visit" title="Opening hours">
           {businessInfo.breakfastLunchNote}
         </SectionHeading>
-        <dl className="overflow-hidden rounded-2xl border border-white/10 bg-[#101211] shadow-2xl shadow-black/20">
+        <dl className="overflow-hidden rounded-lg border border-white/10 bg-[#10100f] shadow-2xl shadow-black/20">
           {businessInfo.hours.map((hours) => (
             <div key={hours.day} className="flex justify-between gap-4 border-b border-white/10 px-5 py-4 last:border-b-0">
               <dt className="font-semibold text-[#f7f2e9]">{hours.day}</dt>

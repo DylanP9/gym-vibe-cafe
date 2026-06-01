@@ -183,9 +183,9 @@ export const menuCategories: MenuCategory[] = [
     id: "nutritional-mains",
     title: "Nutritional Mains",
     description:
-      "No artificial ingredients, minimally processed foods and minimal preservatives. Food cooked using healthy cooking methods and healthy oils.",
+      "High-protein cafe meals with macros shown where supplied on the menu-board artwork.",
     customerNote:
-      "Macros are based on supplied café menu-board artwork and may vary slightly by portion and preparation.",
+      "Macros are based on supplied café menu-board artwork and may vary by portion and preparation.",
     items: [
       honeyGarlicMac,
       { id: "crispy-salt-pepper-chicken-chips", name: "Crispy Salt & Pepper Chicken & Chips", price: "£6.95", macros: { calories: 438, proteinGrams: 40, carbsGrams: 47, fatGrams: 10 } },

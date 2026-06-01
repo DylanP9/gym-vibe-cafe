@@ -16,13 +16,13 @@ export function SectionHeading({
   centered = false,
 }: SectionHeadingProps) {
   return (
-    <div className={`mb-9 max-w-2xl ${centered ? "mx-auto text-center" : ""}`}>
+    <div className={`mb-9 max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
       {eyebrow ? (
-        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#d14a4b]">
+        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#e33a3f]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 id={id} className="text-3xl font-black uppercase leading-tight tracking-[-0.035em] text-[#faf6ee] sm:text-5xl">
+      <h2 id={id} className="text-3xl font-black uppercase leading-[0.98] tracking-[-0.04em] text-[#faf6ee] sm:text-5xl">
         {title}
       </h2>
       {children ? (

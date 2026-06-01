@@ -1,20 +1,17 @@
 import { businessInfo } from "@/data/businessInfo";
-import { siteConfig } from "@/data/siteConfig";
 
 export function StickyMobileActionBar() {
   return (
     <nav
       aria-label="Quick actions"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-white/15 bg-[#090b0a]/98 p-2 shadow-[0_-16px_30px_rgba(0,0,0,0.25)] md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-white/15 bg-[#050505]/98 p-2 shadow-[0_-16px_30px_rgba(0,0,0,0.28)] md:hidden"
     >
       <a
-        href={siteConfig.justEatOrderUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Order from ${businessInfo.name} on Just Eat`}
+        href="/menu"
+        aria-label={`View the ${businessInfo.name} menu`}
         className="mobile-action border-r border-white/10"
       >
-        Order
+        Menu
       </a>
       <a href={businessInfo.phone.href} aria-label={`Call ${businessInfo.name} on ${businessInfo.phone.display}`} className="mobile-action">
         Call

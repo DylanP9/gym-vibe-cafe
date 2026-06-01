@@ -6,11 +6,14 @@ import { siteConfig } from "@/data/siteConfig";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#070908] pb-24 pt-12 md:pb-12">
+    <footer className="border-t border-white/10 bg-[#050505] pb-24 pt-12 md:pb-12">
       <div className="content-shell grid gap-8 text-sm text-[#cfc7bb] sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-black uppercase tracking-wider text-white">{businessInfo.name}</p>
-          <p className="mt-3 max-w-xs leading-6">{businessInfo.tagline}</p>
+          <p className="mt-3 max-w-xs leading-6">
+            Scottish breakfasts, filled rolls, high-protein meals, smoothies and
+            coffee in Kinning Park.
+          </p>
         </div>
         <div>
           <p className="info-label">Visit</p>
@@ -48,8 +51,9 @@ export function Footer() {
           </Link>
         </nav>
       </div>
-      <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs text-[#928a7e]">
-        {businessInfo.name}. Online checkout is being prepared and is not live yet.
+      <p className="content-shell mt-10 border-t border-white/10 pt-6 text-xs leading-5 text-[#928a7e]">
+        {businessInfo.name}. Online Square checkout is being prepared and is not
+        live yet. Meal-prep availability must be checked with the cafe directly.
       </p>
       <div className="content-shell mt-6 flex flex-col gap-3 border-t border-white/10 pb-10 pt-6 text-xs text-[#928a7e] sm:flex-row sm:items-center sm:justify-between sm:pb-0">
         <p>Created by Lunamar Digital</p>

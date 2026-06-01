@@ -7,11 +7,11 @@ type ActionLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 const variantClasses = {
   primary:
-    "border-[#ba3032] bg-[#a42425] text-white shadow-[0_14px_28px_-14px_rgba(164,36,37,0.85)] hover:border-[#cc3e40] hover:bg-[#b92c2e]",
+    "border-[#e33a3f] bg-[#b51f23] text-white shadow-[0_14px_28px_-16px_rgba(181,31,35,0.9)] hover:border-[#ff5256] hover:bg-[#c9282d]",
   secondary:
-    "border-white/20 bg-white/[0.035] text-[#f8f4ec] hover:border-white/35 hover:bg-white/[0.09]",
+    "border-white/22 bg-white/[0.045] text-[#f8f4ec] hover:border-white/40 hover:bg-white/[0.1]",
   quiet:
-    "border-transparent bg-transparent text-[#f8f4ec] underline decoration-[#a42425] underline-offset-4 hover:text-white",
+    "border-transparent bg-transparent text-[#f8f4ec] underline decoration-[#b51f23] underline-offset-4 hover:text-white",
 };
 
 export function ActionLink({
@@ -22,7 +22,7 @@ export function ActionLink({
 }: ActionLinkProps) {
   return (
     <a
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] transition-all ${variantClasses[variant]} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-md border px-6 py-3 text-sm font-black uppercase tracking-[0.12em] transition-all active:translate-y-px ${variantClasses[variant]} ${className}`}
       {...props}
     >
       {children}

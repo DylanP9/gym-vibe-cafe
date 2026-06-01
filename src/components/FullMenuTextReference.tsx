@@ -26,7 +26,7 @@ function MenuItemLine({ item }: { item: MenuItem }) {
 
 function CategoryReference({ category }: { category: MenuCategory }) {
   return (
-    <article className="rounded-xl border border-white/10 bg-[#101211] p-4">
+    <article className="rounded-lg border border-white/10 bg-[#10100f] p-4">
       <h3 className="text-lg font-black uppercase text-[#faf6ee]">{category.title}</h3>
       {category.availabilityNote ? <p className="mt-2 text-sm font-semibold text-[#efcb9c]">{category.availabilityNote}</p> : null}
       {category.description ? <p className="mt-2 text-sm leading-6 text-[#c9c0b2]">{category.description}</p> : null}
@@ -55,7 +55,7 @@ export function FullMenuTextReference() {
       <h2 id="full-menu-reference-heading" className="mb-4 text-2xl font-black uppercase tracking-[-0.03em] text-[#faf6ee]">
         Complete menu reference
       </h2>
-      <details className="rounded-2xl border border-white/10 bg-[#11100f] p-4 sm:p-6">
+      <details className="rounded-lg border border-white/10 bg-[#0f0f0e] p-4 sm:p-6">
         <summary className="cursor-pointer list-none text-lg font-bold text-[#faf6ee]">
           View complete text-only menu
           <span className="ml-3 text-sm font-medium text-[#efcb9c]">All categories</span>

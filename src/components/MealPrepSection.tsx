@@ -10,18 +10,18 @@ interface MealPrepSectionProps {
 
 export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
   return (
-    <section id="meal-prep" className="section-shell section-divider bg-[#111312]" aria-labelledby="meal-prep-heading">
+    <section id="meal-prep" className="section-shell section-divider bg-[#10100f]" aria-labelledby="meal-prep-heading">
       <div className="content-shell grid gap-8 md:grid-cols-[0.8fr_1fr] md:items-center">
-        <figure className="relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-[#080a09] p-4 shadow-2xl shadow-black/25">
-          <div className="absolute inset-x-0 top-0 h-1 bg-[#a42425]" />
-          <div className="rounded-xl border border-[#a42425]/25 bg-[radial-gradient(circle_at_20%_0%,rgba(164,36,37,0.24),transparent_34%),#0d0f0e] p-5">
+        <figure className="relative mx-auto w-full max-w-sm overflow-hidden rounded-lg border border-white/10 bg-[#080808] p-4 shadow-2xl shadow-black/25">
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-[#b51f23]" />
+          <div className="rounded-md border border-[#b51f23]/30 bg-[radial-gradient(circle_at_20%_0%,rgba(181,31,35,0.24),transparent_34%),#0d0d0c] p-5">
             <Image
               src={siteAssets.mealPrepBundleReference.src}
               alt={siteAssets.mealPrepBundleReference.alt}
               width={siteAssets.mealPrepBundleReference.width}
               height={siteAssets.mealPrepBundleReference.height}
               unoptimized
-              className="mx-auto h-auto w-full max-w-[260px] rounded-lg border border-white/10 object-contain shadow-[0_20px_45px_-34px_rgba(0,0,0,0.95)]"
+              className="mx-auto h-auto w-full max-w-[260px] rounded-md border border-white/10 object-contain shadow-[0_20px_45px_-34px_rgba(0,0,0,0.95)]"
             />
           </div>
           <figcaption className="mt-3 text-center text-xs text-[#a79d90]">
@@ -29,7 +29,7 @@ export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
           </figcaption>
         </figure>
         <div>
-          <SectionHeading id="meal-prep-heading" eyebrow="Meal prep" title="Ask in cafe for current meal-prep availability.">
+          <SectionHeading id="meal-prep-heading" eyebrow="Meal prep" title="Ask in cafe for current meal-prep availability">
             Options, prices and availability may change. Please check with the
             cafe directly before visiting specifically for meal prep.
           </SectionHeading>
@@ -40,7 +40,7 @@ export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
               and does not take meal-prep orders or payments.
             </p>
           ) : null}
-          <div className="mb-7 max-w-xl rounded-xl border border-[#df9b50]/35 bg-[#211516] p-4 text-sm leading-6 text-[#f1d8bc]">
+          <div className="mb-7 max-w-xl rounded-lg border border-[#df9b50]/35 bg-[#211516] p-4 text-sm leading-6 text-[#f1d8bc]">
             Meal prep is not connected to online checkout. Ask in cafe, call, or
             check Instagram for current availability before making a specific
             trip.

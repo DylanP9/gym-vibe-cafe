@@ -1,5 +1,4 @@
 import { FAQSection } from "@/components/FAQSection";
-import { ExternalOrderBand } from "@/components/ExternalOrderBand";
 import { FindUsPanel } from "@/components/FindUsPanel";
 import { Footer } from "@/components/Footer";
 import { GalleryPlaceholderSection } from "@/components/GalleryPlaceholderSection";
@@ -10,6 +9,7 @@ import { InstagramCTA } from "@/components/InstagramCTA";
 import { MealPrepSection } from "@/components/MealPrepSection";
 import { MenuBoardReferencePanel } from "@/components/MenuBoardReferencePanel";
 import { QuickInfoStrip } from "@/components/QuickInfoStrip";
+import { SmoothiesCoffeeSection } from "@/components/SmoothiesCoffeeSection";
 import { StickyMobileActionBar } from "@/components/StickyMobileActionBar";
 
 export default function Home() {
@@ -19,8 +19,8 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <QuickInfoStrip />
-        <ExternalOrderBand />
         <HomepageMenuPreview />
+        <SmoothiesCoffeeSection />
         <MenuBoardReferencePanel />
         <MealPrepSection />
         <FindUsPanel />

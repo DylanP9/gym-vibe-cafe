@@ -12,9 +12,8 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
       <div className="content-shell grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
           <SectionHeading id="find-us-heading" eyebrow="Find us" title="Visit us in Kinning Park">
-            On Glasgow Southside, Gym Vibe Cafe gives visitors a clear place to
-            check the menu, opening hours, phone number and directions before
-            heading in.
+            We are on Middlesex Street in Kinning Park, Glasgow Southside. Check
+            the hours, call the cafe, or open directions before you head over.
           </SectionHeading>
           <div className="flex flex-wrap gap-3">
             {showLocationLink ? (
@@ -27,7 +26,7 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
             </ActionLink>
           </div>
         </div>
-        <div className="rounded-2xl border border-[#a42425]/45 bg-[#111312] p-6 shadow-2xl shadow-black/20 sm:p-8">
+        <div className="rounded-lg border border-[#b51f23]/45 bg-[#10100f] p-6 shadow-2xl shadow-black/20 sm:p-8">
           <p className="text-lg font-black uppercase tracking-wide text-white">
             {businessInfo.name}
           </p>
@@ -40,13 +39,13 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
           </address>
           <div className="mt-5 grid gap-3 border-y border-white/10 py-5 text-sm text-[#d9d0c4] sm:grid-cols-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d14a4b]">Phone</p>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#e33a3f]">Phone</p>
               <a className="mt-2 inline-block font-bold text-[#f5f0e7] hover:text-[#e25b5c]" href={businessInfo.phone.href}>
                 {businessInfo.phone.display}
               </a>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#d14a4b]">Updates</p>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#e33a3f]">Updates</p>
               <a
                 className="mt-2 inline-block font-bold text-[#f5f0e7] hover:text-[#e25b5c]"
                 href={businessInfo.instagram.url}

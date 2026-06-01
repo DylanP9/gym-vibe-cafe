@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090b0a;
-  --foreground: #f8f4ec;
-  --panel: #111312;
-  --muted: #cfc8bb;
-  --accent: #a42425;
+  --background: #050505;
+  --foreground: #f7f1e8;
+  --panel: #10100f;
+  --panel-strong: #15100f;
+  --muted: #c9c0b3;
+  --accent: #b51f23;
+  --accent-bright: #e33a3f;
+  --line: rgba(255, 255, 255, 0.11);
 }
 
 * {
@@ -21,10 +24,11 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 50% 0%, rgba(164, 36, 37, 0.07), transparent 34rem),
+    radial-gradient(circle at 78% 0%, rgba(181, 31, 35, 0.13), transparent 28rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 22rem),
     var(--background);
   color: var(--foreground);
-  font-family: "Avenir Next", "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "Arial Narrow", "Avenir Next Condensed", "Segoe UI", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -51,34 +55,34 @@ summary::-webkit-details-marker {
 
 @layer components {
   .content-shell {
-    @apply mx-auto max-w-6xl px-4 sm:px-6;
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-shell {
-    @apply py-16 sm:py-24;
+    @apply py-14 sm:py-20 lg:py-24;
   }
 
   .section-divider {
-    @apply border-y border-white/[0.07];
+    @apply border-y border-white/[0.08];
   }
 
   .info-label {
-    @apply text-xs font-bold uppercase tracking-[0.2em] text-[#c34243];
+    @apply text-xs font-black uppercase tracking-[0.18em] text-[#e33a3f];
   }
 
   .menu-tile {
-    @apply rounded-xl border border-white/10 bg-[#101211] p-5 transition-all hover:-translate-y-0.5 hover:border-[#a42425]/70;
+    @apply rounded-lg border border-white/10 bg-[#10100f] p-5 transition-all hover:border-[#b51f23]/75;
   }
 
   .menu-card {
-    @apply rounded-xl border border-white/10 bg-[#101211] shadow-[0_16px_35px_-30px_rgba(0,0,0,0.7)];
+    @apply rounded-lg border border-white/10 bg-[#10100f] shadow-[0_16px_35px_-30px_rgba(0,0,0,0.7)];
   }
 
   .stat-card {
-    @apply rounded-xl border border-white/10 bg-[#0c0e0d] p-6;
+    @apply rounded-lg border border-white/10 bg-[#0b0b0a] p-6;
   }
 
   .mobile-action {
-    @apply flex min-h-14 items-center justify-center rounded-sm text-xs font-bold uppercase tracking-[0.13em] text-[#f8f4ec] transition-colors hover:bg-white/10;
+    @apply flex min-h-14 items-center justify-center rounded-sm text-[0.68rem] font-black uppercase tracking-[0.12em] text-[#f8f4ec] transition-colors hover:bg-white/10;
   }
 }

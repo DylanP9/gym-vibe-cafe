@@ -10,7 +10,7 @@ const gallerySlots = [
 
 export function GalleryPlaceholderSection() {
   return (
-    <section className="section-shell section-divider bg-[#111312]" aria-labelledby="gallery-heading">
+    <section className="section-shell section-divider bg-[#10100f]" aria-labelledby="gallery-heading">
       <div className="content-shell">
         <SectionHeading id="gallery-heading" eyebrow="Gallery ready" title="Photography spaces prepared">
           Genuine cafe and food photography will be added here when approved
@@ -20,15 +20,15 @@ export function GalleryPlaceholderSection() {
           {gallerySlots.map((slot, index) => (
             <div
               key={slot.title}
-              className="relative flex min-h-48 overflow-hidden rounded-xl border border-dashed border-white/18 bg-[linear-gradient(145deg,#171312,#0b0d0c)] p-4 shadow-[0_16px_35px_-32px_rgba(0,0,0,0.8)]"
+              className="relative flex min-h-48 overflow-hidden rounded-lg border border-dashed border-white/18 bg-[linear-gradient(145deg,#171110,#080808)] p-4 shadow-[0_16px_35px_-32px_rgba(0,0,0,0.8)]"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_16%,rgba(164,36,37,0.24),transparent_31%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_16%,rgba(181,31,35,0.24),transparent_31%)]" />
               <div className="relative flex w-full flex-col justify-between">
                 <span className="text-xs font-black uppercase tracking-[0.2em] text-[#e25758]">
                   Slot {index + 1}
                 </span>
                 <div>
-                  <div className="mb-4 h-10 w-10 rounded-full border border-[#a42425]/45 bg-white/[0.035]" />
+                  <div className="mb-4 h-10 w-10 rounded-md border border-[#b51f23]/45 bg-white/[0.035]" />
                   <p className="font-bold text-[#f4efe6]">{slot.title}</p>
                   <p className="mt-2 text-xs leading-5 text-[#aaa194]">{slot.detail}</p>
                 </div>

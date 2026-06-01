@@ -23,7 +23,7 @@ export default function MealPrepPage() {
           title="Meal-prep availability"
         >
           Ask in cafe for current meal-prep availability. Options, prices and
-          collection details should be confirmed directly with the cafe.
+          availability may change. Please check with the cafe directly.
         </PageIntro>
         <MealPrepSection detailed />
       </main>

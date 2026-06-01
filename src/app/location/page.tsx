@@ -38,8 +38,8 @@ export default function LocationPage() {
             </>
           }
         >
-          Visit us in Kinning Park for breakfast, lunch, coffee, smoothies or
-          high-protein menu choices nearby.
+          Visit us on Middlesex Street in Kinning Park for breakfast, lunch,
+          coffee, smoothies and high-protein menu choices.
         </PageIntro>
         <FindUsPanel showLocationLink={false} />
         <OpeningHoursSection />
