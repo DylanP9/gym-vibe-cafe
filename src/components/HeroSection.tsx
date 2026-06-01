@@ -19,7 +19,7 @@ export function HeroSection() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d8d0c4] sm:text-xl">
             Scottish breakfasts, filled rolls, high-protein meals, smoothies and
-            coffee on Glasgow Southside. Breakfast and lunch served until 3pm.
+            coffee on Glasgow Southside. Breakfast and lunch served until 4pm.
           </p>
           <div className="mt-9 flex flex-col gap-3 min-[390px]:flex-row min-[390px]:flex-wrap">
             <ActionLink href="/menu">View menu</ActionLink>

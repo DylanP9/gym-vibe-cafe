@@ -35,7 +35,7 @@ export const businessInfo: BusinessInfo = {
     { day: "Saturday", display: "Closed", closed: true },
     { day: "Sunday", display: "9:00 am - 3:00 pm", opens: "09:00", closes: "15:00" },
   ],
-  breakfastLunchNote: "Breakfast & lunch available until 3pm.",
+  breakfastLunchNote: "Breakfast & lunch available until 4pm.",
   ratingSnapshot: {
     rating: 4.9,
     reviewCount: 121,

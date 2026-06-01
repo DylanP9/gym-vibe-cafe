@@ -27,7 +27,7 @@ export const faqs: FAQ[] = [
   {
     id: "breakfast-and-lunch",
     question: "When are breakfast and lunch available?",
-    answer: "Breakfast and lunch are listed as available until 3pm.",
+    answer: "Breakfast and lunch are listed as available until 4pm.",
   },
   {
     id: "online-payments",

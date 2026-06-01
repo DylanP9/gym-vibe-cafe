@@ -68,7 +68,7 @@ The site has been redesigned around the supplied Gym Vibe Cafe identity and menu
 ## Owner Approval Needed Before Launch
 
 - Final menu names, prices, availability and high-protein macros.
-- Opening hours, holiday-hours process and breakfast/lunch until 3pm wording.
+- Opening hours, holiday-hours process and breakfast/lunch until 4pm wording.
 - Meal-prep wording, availability expectations and whether any prices should be published.
 - Whether the Just Eat link should remain visible.
 - Whether and when in-site Square checkout should be enabled.
@@ -117,7 +117,7 @@ Keep published business content aligned with the supplied verified information:
 | Instagram | `@gymvibecafe` |
 | Tagline | Eat Good. Feel Better. Fuel Your Vibe. |
 | Google rating snapshot | 4.9 stars from 121 reviews, supplied May 2026 |
-| Breakfast and lunch | Available until 3pm |
+| Breakfast and lunch | Available until 4pm |
 
 Supplied opening hours:
 

@@ -79,7 +79,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "traditional-breakfast-lunch",
     title: "Traditional Breakfast & Lunch",
-    availabilityNote: "Available until 3pm.",
+    availabilityNote: "Available until 4pm.",
     items: [
       hotFilledRolls,
       fullScottishBreakfast,
@@ -132,7 +132,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "build-your-own",
     title: "Build Your Own",
-    availabilityNote: "Available until 3pm.",
+    availabilityNote: "Available until 4pm.",
     description:
       "Choose your bread/base, filling, salad and dressing. This is displayed as an in-store menu guide only, not an online order builder.",
     customerNote: "Ask in café for current build-your-own options.",
@@ -168,7 +168,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "nutritional-breakfast-lunch",
     title: "Nutritional Breakfast & Lunch",
-    availabilityNote: "Available until 3pm.",
+    availabilityNote: "Available until 4pm.",
     items: [
       { id: "eggs-benedict", name: "Eggs Benedict", price: "£6.95" },
       { id: "eggs-florentine", name: "Eggs Florentine", price: "£5.95" },

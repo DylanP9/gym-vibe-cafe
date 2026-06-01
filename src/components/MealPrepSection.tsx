@@ -40,11 +40,6 @@ export function MealPrepSection({ detailed = false }: MealPrepSectionProps) {
               and does not take meal-prep orders or payments.
             </p>
           ) : null}
-          <div className="mb-7 max-w-xl rounded-lg border border-[#df9b50]/35 bg-[#211516] p-4 text-sm leading-6 text-[#f1d8bc]">
-            Meal prep is not connected to online checkout. Ask in cafe, call, or
-            check Instagram for current availability before making a specific
-            trip.
-          </div>
           <div className="flex flex-wrap gap-3">
             {detailed ? (
               <>

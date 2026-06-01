@@ -37,6 +37,25 @@ export function FindUsPanel({ showLocationLink = true }: FindUsPanelProps) {
             <br />
             {businessInfo.address.postcode}
           </address>
+          <a
+            href={businessInfo.maps.directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 block overflow-hidden rounded-lg border border-[#b51f23]/45 bg-[linear-gradient(135deg,#171110,#090909)] p-4 transition hover:border-[#e33a3f]"
+            aria-label={`Open Google Maps directions to ${businessInfo.name}`}
+          >
+            <span className="block text-xs font-black uppercase tracking-[0.18em] text-[#e33a3f]">
+              Google Maps
+            </span>
+            <span className="mt-4 grid min-h-28 place-items-center rounded-md border border-white/10 bg-[radial-gradient(circle_at_30%_30%,rgba(181,31,35,0.3),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 text-center">
+              <span className="text-lg font-black uppercase tracking-[-0.02em] text-white">
+                Get directions
+              </span>
+              <span className="text-sm leading-6 text-[#cfc7bb]">
+                Opens Gym Vibe Cafe in Google Maps
+              </span>
+            </span>
+          </a>
           <div className="mt-5 grid gap-3 border-y border-white/10 py-5 text-sm text-[#d9d0c4] sm:grid-cols-2">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#e33a3f]">Phone</p>

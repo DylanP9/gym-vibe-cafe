@@ -56,14 +56,29 @@ export function Footer() {
         live yet. Meal-prep availability must be checked with the cafe directly.
       </p>
       <div className="content-shell mt-6 flex flex-col gap-3 border-t border-white/10 pb-10 pt-6 text-xs text-[#928a7e] sm:flex-row sm:items-center sm:justify-between sm:pb-0">
-        <p>Created by Lunamar Digital</p>
-        <Image
-          src={siteAssets.lunamarDigitalLogo.src}
-          alt={siteAssets.lunamarDigitalLogo.alt}
-          width={siteAssets.lunamarDigitalLogo.width}
-          height={siteAssets.lunamarDigitalLogo.height}
-          className="h-12 w-auto self-start sm:self-auto"
-        />
+        <a
+          href="https://lunamar-digital.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[#cfc7bb] underline decoration-[#b51f23] underline-offset-4 hover:text-white"
+        >
+          Created by Lunamar Digital
+        </a>
+        <a
+          href="https://lunamar-digital.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit the Lunamar Digital website"
+          className="inline-flex"
+        >
+          <Image
+            src={siteAssets.lunamarDigitalLogo.src}
+            alt={siteAssets.lunamarDigitalLogo.alt}
+            width={siteAssets.lunamarDigitalLogo.width}
+            height={siteAssets.lunamarDigitalLogo.height}
+            className="h-12 w-auto self-start sm:self-auto"
+          />
+        </a>
       </div>
     </footer>
   );
